@@ -1,5 +1,6 @@
 import CounterInput from "@/components/CounterInput";
 import CounterOutput from "@/components/CounterOutput";
+import DynamicCounterInput from "@/components/DynamicCounterInput";
 import { Inter } from "next/font/google";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
                     <div>
                         <CounterOutput />
                         <CounterInput />
+                        <DynamicCounterInput/>
                     </div>
                 </main>
             </div>
