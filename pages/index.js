@@ -1,5 +1,6 @@
 import BreakText from "@/components/BreakText";
 import ExtendedImage from "@/components/ExtendedImage";
+import SmoothScroll from "@/components/SmoothScroll";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -86,12 +87,12 @@ export default function Home() {
                         Software Engineer
                     </h2>
                     <h2 className="absolute bottom-10 text-2xl right-0 w-[40vw]">
-                        I’m Mir Fayek Hossain, a Front-en Developer and UI/UX specialist who
+                        I’m Mir Fayek Hossain, a Front-end Developer and UI/UX specialist who
                         thrives in creating unique data-driven design approaches
                     </h2>
                 </div>
             </div>
-            <>
+            <SmoothScroll>
                 <div className="pt-[90vh] w-full  flex flex-col">
                     <div className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2 text-2xl border-t  border-b" id="works">
                         <h2 className="my-auto pl-10">Mir Fayek Hossain</h2>
@@ -140,7 +141,7 @@ export default function Home() {
                         <div></div>
                         <div className="relative w-full aspect-video flex justify-center items-center p-10">
                             <h2 className="text-8xl bg-gren-400 w-fit">
-                                LET’S MAKE SOMETHING TOGETHER,{" "}
+                                LET’S MAKE SOMETHING TOGETHER,<br />
                                 <span className="bg-brand text-black">
                                     SAY HI!
                                 </span>
@@ -186,7 +187,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </>
+            </SmoothScroll>
         </>
     );
 }
