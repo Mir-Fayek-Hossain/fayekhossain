@@ -86,7 +86,7 @@ export default function Home() {
                         Software Engineer
                     </h2>
                     <h2 className="absolute bottom-10 text-2xl right-0 w-[40vw]">
-                        I’m Rokas Judickas, a UX designer and CRO specialist who
+                        I’m Mir Fayek Hossain, a Front-en Developer and UI/UX specialist who
                         thrives in creating unique data-driven design approaches
                     </h2>
                 </div>
