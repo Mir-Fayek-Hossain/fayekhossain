@@ -25,7 +25,7 @@ export default function Home() {
         {
             id: 2,
             name: "Xalian",
-            thumb: "/static/projects/xalian.png",
+            thumb: "/static/projects/xalian.PNG",
             url: "",
             stacks: ["ReactJS", "TailwindCSS"],
             description: "",
