@@ -1,6 +1,7 @@
 import BreakText from "@/components/BreakText";
 import ExtendedImage from "@/components/ExtendedImage";
 import SmoothScroll from "@/components/SmoothScroll";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -8,19 +9,19 @@ export default function Home() {
     const [details, setdetails] = useState([
         {
             id: 0,
-            name: "bZm Graphics ltd",
-            thumb: "/static/projects/bzm.jpg",
-            url: "",
-            stacks: ["NextJS", "TailwindCSS"],
-            description: "Production Level Project",
-        },
-        {
-            id: 1,
             name: "Codecony",
             thumb: "/static/projects/codecony.png",
             url: "",
             stacks: ["NextJS", "TailwindCSS"],
             description: "",
+        },
+        {
+            id: 1,
+            name: "bZm Graphics ltd",
+            thumb: "/static/projects/bzm.jpg",
+            url: "",
+            stacks: ["NextJS", "TailwindCSS"],
+            description: "Production Level Project",
         },
         {
             id: 2,
@@ -47,7 +48,6 @@ export default function Home() {
             description: "",
         },
     ]);
-    const [hoverContacts, setHoverContacts] = useState("none");
 
     const [contactData, setContactData] = useState([
         {
@@ -83,21 +83,47 @@ export default function Home() {
                 style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}
             >
                 <div className="w-[90vw] relative h-[90vh]">
-                    <h2 className="text-[200px] font-bold leading-tight">
+                    <motion.h2
+                        className="text-[200px] font-bold leading-tight"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ delay: 1, duration: 0.5 }}
+                        variants={{
+                            hidden: { opacity: 0, x: -700 },
+                            visible: { opacity: 1, x: 0 },
+                        }}
+                    >
                         Software Engineer
-                    </h2>
-                    <h2 className="absolute bottom-10 text-2xl right-0 w-[40vw]">
-                        I’m Mir Fayek Hossain, a Front-end Developer and UI/UX specialist who
-                        thrives in creating unique data-driven design approaches
-                    </h2>
+                    </motion.h2>
+                    <motion.h2
+                        className="absolute bottom-10 text-2xl right-0 w-[40vw]"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ delay: 0.5, duration: 0.5 }}
+                        variants={{
+                            hidden: { opacity: 0, y: 100 },
+                            visible: { opacity: 1, y: 0 },
+                        }}
+                    >
+                        I’m Mir Fayek Hossain, a Front-end Developer and UI/UX
+                        specialist who thrives in creating unique data-driven
+                        design approaches
+                    </motion.h2>
                 </div>
             </div>
             <SmoothScroll>
-                <div className="pt-[90vh] w-full  flex flex-col">
-                    <div className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2 text-2xl border-t  border-b" id="works">
+                
+                <div className="w-full pt-[90vh] flex flex-col">
+                    
+                    <div
+                        className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2 text-2xl border-t  border-b"
+                        id="works"
+                    >
                         <h2 className="my-auto pl-10">Mir Fayek Hossain</h2>
                         <div className="grid grid-cols-3 place-items-center border-l ">
-                            <Link href="#works">
+                            <Link href="/contact">
                                 <BreakText word="Works" />
                             </Link>
                             <Link href="a">
@@ -139,47 +165,25 @@ export default function Home() {
                             </Link>
                         ))}
                         <div></div>
-                        <div className="relative w-full aspect-video flex justify-center items-center p-10">
-                            <h2 className="text-8xl bg-gren-400 w-fit">
-                                LET’S MAKE SOMETHING TOGETHER,<br />
+                        <div className="relative w-full aspect-video flex justify-center items-center px-10 group text-8xl uppercase h-full">
+                            <h2 className="w-fit text-justify ">
+                                {/* LET’S MAKE SOMETHING TOGETHER, */}
+                                Don&apos;t be a stranger! Let&apos;s work Together,{" "}
                                 <span className="bg-brand text-black">
-                                    SAY HI!
+                                    say hi!
                                 </span>
                             </h2>
                         </div>
                         <div className="h-full" id="contacts">
-                            <ul className="flex flex-col h-full border-l">
+                            <ul className="flex flex-col h-full border-l parent">
                                 {contactData.map((data) => (
                                     <Link
                                         key={data.id}
                                         className="h-full border-b"
                                         href={data.url}
-                                        onMouseEnter={() =>
-                                            setHoverContacts(data.name)
-                                        }
-                                        onMouseLeave={() =>
-                                            setHoverContacts("none")
-                                        }
                                     >
-                                        <li
-                                            className={`text-4xl fancy w-full h-full flex items-center ml-10 
-                                            ${
-                                                hoverContacts == data.name ||
-                                                (hoverContacts == "none"
-                                                    ? "opacity-100"
-                                                    : "opacity-30 blur-sm")
-                                            } duration-500`}
-                                        >
-                                            {data.name
-                                                .split("")
-                                                .map((word, idx) => (
-                                                    <span
-                                                        key={idx}
-                                                        className="outer"
-                                                    >
-                                                        {word}
-                                                    </span>
-                                                ))}
+                                        <li className="text-4xl child w-full h-full flex items-center ml-10 duration-500">
+                                            <BreakText word={data.name} />
                                         </li>
                                     </Link>
                                 ))}

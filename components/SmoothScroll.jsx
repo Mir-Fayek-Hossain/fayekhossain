@@ -1,8 +1,11 @@
 import { useEffect, useRef } from "react";
 
+import { useRouter } from "next/router";
 import useWindowSize from "../hooks/useWindowSize";
 
 const SmoothScroll = ({ children }) => {
+    const router = useRouter();
+
     // 1.
     const windowSize = useWindowSize();
 
@@ -20,7 +23,7 @@ const SmoothScroll = ({ children }) => {
     // 4.
     useEffect(() => {
         setBodyHeight();
-    }, [windowSize?.height]);
+    }, [windowSize?.height, router.asPath]);
 
     const setBodyHeight = () => {
         document.body.style.height = `${

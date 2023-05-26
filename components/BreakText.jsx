@@ -7,7 +7,7 @@ const BreakText = ({ word }) => {
         //         </span>
         //     ))}
         // </span>
-        <h2 className="fancy flex items-center">
+        <h2 className="fancy w-full h-full flex items-center">
             {word.split("").map((letter, idx) => (
                 <span key={idx} className="outer">
                     {letter}

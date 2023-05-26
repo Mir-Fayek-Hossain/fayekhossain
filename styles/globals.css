@@ -8,6 +8,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 * {
     color: white;
     box-sizing: border-box;
@@ -18,8 +19,9 @@
 }
 *::selection {
     color: black;
-    background-color: #F76E02;
+    background-color: #f76e02;
 }
+
 .ppparent {
     position: fixed;
     top: 0;
@@ -51,8 +53,9 @@
     }
 }
 
-
-
+.parent:hover .child:not(:hover) {
+    filter: blur(5px);
+}
 
 .fancy > .outer {
     transition: transform 350ms ease;
@@ -61,7 +64,6 @@
 .fancy:hover > .outer {
     transition-duration: 800ms;
 }
-
 
 .fancy:hover > .outer:nth-child(1) {
     transform: translate(-80%, 60%) rotate(8deg);
@@ -110,9 +112,6 @@
 .fancy:hover > .outer:nth-child(12) {
     transform: translate(120%, -30%) rotate(-10deg);
 }
-
-
-
 
 .underline-animation {
     position: relative;
