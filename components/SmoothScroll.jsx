@@ -40,7 +40,6 @@ const SmoothScroll = ({ children }) => {
         };
     });
     const smoothScrollingHandler = () => {
-        console.log(data.rounded+"--"+window.scrollY);
         if (scrollingContainerRef.current?.style) {
             data.current = window.scrollY;
             data.previous += (data.current - data.previous) * data.ease;
