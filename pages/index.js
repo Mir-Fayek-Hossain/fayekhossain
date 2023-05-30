@@ -11,7 +11,7 @@ export default function Home() {
             id: 0,
             name: "Codecony",
             thumb: "/static/projects/codecony.png",
-            url: "",
+            url: "https://codecony.vercel.app",
             stacks: ["NextJS", "TailwindCSS"],
             description: "",
         },
@@ -19,7 +19,7 @@ export default function Home() {
             id: 1,
             name: "bZm Graphics ltd",
             thumb: "/static/projects/bzm.jpg",
-            url: "",
+            url: "http://bzmgraphics.com",
             stacks: ["NextJS", "TailwindCSS"],
             description: "Production Level Project",
         },
@@ -27,7 +27,7 @@ export default function Home() {
             id: 2,
             name: "Xalian",
             thumb: "/static/projects/xalian.PNG",
-            url: "",
+            url: "https://xalian.vercel.app/",
             stacks: ["ReactJS", "TailwindCSS"],
             description: "",
         },
@@ -35,20 +35,27 @@ export default function Home() {
             id: 3,
             name: "Photo Production Process",
             thumb: "/static/projects/client-area.PNG",
-            url: "",
+            url: "https://ppp.bzmgraphics.com/",
             stacks: ["Laravel", "AlpineJS", "TailwindCSS"],
             description: "",
         },
         {
             id: 4,
-            name: "Netflix",
-            thumb: "/static/bg-2.jpeg",
-            url: "",
+            name: "Netflix Clone",
+            thumb: "/static/projects/netflix-clone.jpeg",
+            url: "#",
             stacks: ["NextJS", "TailwindCSS"],
             description: "",
         },
     ]);
-
+    const scrollToBottom = () => {
+        window.scrollTo(0, document.body.scrollHeight);
+    };
+    const scrollTo90vh = () => {
+        const windowHeight = window.innerHeight;
+        const scrollHeight = windowHeight * 0.9;
+        window.scrollTo(0, scrollHeight);
+    };
     const [contactData, setContactData] = useState([
         {
             id: 0,
@@ -84,7 +91,7 @@ export default function Home() {
             >
                 <div className="w-[90vw] relative h-[90vh]">
                     <motion.h2
-                        className="text-[200px] font-bold leading-tight"
+                        className="2xl:text-[200px] text-[140px] font-bold leading-tight"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.1 }}
@@ -97,7 +104,7 @@ export default function Home() {
                         Software Engineer
                     </motion.h2>
                     <motion.h2
-                        className="absolute bottom-10 text-2xl right-0 w-[40vw]"
+                        className="absolute bottom-10 2xl:text-2xl text-xl right-0 w-[40vw]"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.1 }}
@@ -109,29 +116,27 @@ export default function Home() {
                     >
                         I’m Mir Fayek Hossain, a Front-end Developer and UI/UX
                         specialist who thrives in creating unique data-driven
-                        design approaches
+                        design approaches.
                     </motion.h2>
                 </div>
             </div>
             <SmoothScroll>
-                
-                <div className="w-full pt-[90vh] flex flex-col">
-                    
+                <div className="w-full flex flex-col sticky top-0">
                     <div
-                        className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2 text-2xl border-t  border-b"
+                        className=" min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2  2xl:text-2xl text-xl border-t  border-b"
                         id="works"
                     >
                         <h2 className="my-auto pl-10">Mir Fayek Hossain</h2>
                         <div className="grid grid-cols-3 place-items-center border-l ">
-                            <Link href="/contact">
+                            <button onClick={scrollTo90vh}>
                                 <BreakText word="Works" />
-                            </Link>
-                            <Link href="a">
+                            </button>
+                            <Link href="/contact">
                                 <BreakText word="Resume" />
                             </Link>
-                            <Link href="#contacts">
+                            <button onClick={scrollToBottom}>
                                 <BreakText word="Contacts" />
-                            </Link>
+                            </button>
                         </div>
                     </div>
                     <div className="grid grid-cols-2 backdrop-blur-2xl overflow-x-hidden">
@@ -139,17 +144,17 @@ export default function Home() {
                             <Link
                                 href={data.url}
                                 key={data.id}
-                                className="relative w-full aspect-[4/2] bg-black group overflow-hidden project"
+                                className="relative w-full aspect-video bg-black group overflow-hidden project"
                             >
                                 <ExtendedImage
                                     src={data.thumb}
                                     className="group-hover:opacity-25 group-hover:scale-110 duration-[.6s] opacity-75"
                                 />
-                                <div className="absolute left-10 bottom-10   group-hover:opacity-100 opacity-0 duration-700 space-y-3">
-                                    <h2 className="font-bold text-4xl underline-animation after:duration-500 w-fit">
+                                <div className="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 group-hover:opacity-100 opacity-0 duration-700 space-y-3">
+                                    <h2 className="font-bold  2xl:text-4xl text-2xl underline-animation after:duration-500 w-fit">
                                         {data.name}
                                     </h2>
-                                    <p className="text-2xl underline-animation after:duration-500 w-fit">
+                                    <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
                                         {data.stacks.map((stack, idx) => (
                                             <span key={idx}>
                                                 {stack}
@@ -158,17 +163,18 @@ export default function Home() {
                                             </span>
                                         ))}
                                     </p>
-                                    <p className="underline-animation after:duration-500 w-fit">
+                                    <p className="underline-animation after:duration-500 w-fit  2xl:text-base text-sm">
                                         {data?.description}
                                     </p>
                                 </div>
                             </Link>
                         ))}
                         <div></div>
-                        <div className="relative w-full aspect-video flex justify-center items-center px-10 group text-8xl uppercase h-full">
+                        <div className="relative w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl text-[55px] leading-[1] uppercase h-full">
                             <h2 className="w-fit text-justify ">
                                 {/* LET’S MAKE SOMETHING TOGETHER, */}
-                                Don&apos;t be a stranger! Let&apos;s work Together,{" "}
+                                Don&apos;t be a stranger! Let&apos;s work
+                                Together,{" "}
                                 <span className="bg-brand text-black">
                                     say hi!
                                 </span>
@@ -182,7 +188,7 @@ export default function Home() {
                                         className="h-full border-b"
                                         href={data.url}
                                     >
-                                        <li className="text-4xl child w-full h-full flex items-center ml-10 duration-500">
+                                        <li className="2xl:text-4xl text-2xl child w-full h-full flex items-center ml-10 duration-500">
                                             <BreakText word={data.name} />
                                         </li>
                                     </Link>

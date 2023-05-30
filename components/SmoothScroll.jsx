@@ -40,6 +40,7 @@ const SmoothScroll = ({ children }) => {
         };
     });
     const smoothScrollingHandler = () => {
+        console.log(data.rounded+"--"+window.scrollY);
         if (scrollingContainerRef.current?.style) {
             data.current = window.scrollY;
             data.previous += (data.current - data.previous) * data.ease;
@@ -56,7 +57,7 @@ const SmoothScroll = ({ children }) => {
     };
 
     return (
-        <div className="ppparent">
+        <div className="ppparent pt-[90vh]">
             <div ref={scrollingContainerRef}>{children}</div>
         </div>
     );
