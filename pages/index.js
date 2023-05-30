@@ -121,9 +121,9 @@ export default function Home() {
                 </div>
             </div>
             <SmoothScroll>
-                <div className="w-full flex flex-col sticky top-0">
+                <div className="w-full pt-[90vh] flex flex-col">
                     <div
-                        className=" min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2  2xl:text-2xl text-xl border-t  border-b"
+                        className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2  2xl:text-2xl text-xl border-t  border-b"
                         id="works"
                     >
                         <h2 className="my-auto pl-10">Mir Fayek Hossain</h2>
@@ -144,7 +144,7 @@ export default function Home() {
                             <Link
                                 href={data.url}
                                 key={data.id}
-                                className="relative w-full aspect-video bg-black group overflow-hidden project"
+                                className="relative w-full aspect-[4/2] bg-black group overflow-hidden project"
                             >
                                 <ExtendedImage
                                     src={data.thumb}
