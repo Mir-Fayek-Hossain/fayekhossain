@@ -26,7 +26,7 @@ export default function Home() {
         {
             id: 2,
             name: "Photo Production Process",
-            thumb: "/static/projects/client-area.png",
+            thumb: "/static/projects/client-area.PNG",
             url: "https://ppp.bzmgraphics.com/",
             stacks: ["Laravel", "AlpineJS", "TailwindCSS"],
             description: "",
