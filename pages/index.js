@@ -39,20 +39,21 @@ export default function Home() {
             stacks: ["NextJS", "TailwindCSS"],
             description: "Production Level Project",
         },
+
         {
             id: 4,
-            name: "Netflix Clone",
-            thumb: "/static/projects/netflix.png",
-            url: "#",
-            stacks: ["NextJS", "TailwindCSS"],
+            name: "Notely",
+            thumb: "/static/projects/notely.jpg",
+            url: "https://notely.art",
+            stacks: ["HTML5", "JQuery"],
             description: "",
         },
         {
             id: 5,
-            name: "Xalian",
-            thumb: "/static/projects/xalian.PNG",
-            url: "https://xalian.vercel.app/",
-            stacks: ["ReactJS", "TailwindCSS"],
+            name: "Netflix Clone",
+            thumb: "/static/projects/netflix.png",
+            url: "#",
+            stacks: ["NextJS", "TailwindCSS"],
             description: "",
         },
 
@@ -77,27 +78,27 @@ export default function Home() {
         {
             id: 0,
             name: "LinkedIn",
-            url: "#",
+            url: "https://www.linkedin.com/in/mir-fayek-hossain-49920a233/",
         },
         {
             id: 1,
             name: "Facebook",
-            url: "#",
+            url: "https://www.facebook.com/fayek.hossain.5/",
         },
         {
             id: 2,
             name: "Instagram",
-            url: "#",
+            url: "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Ffayekhossain%3Ffbclid%3DIwAR1Kb7iPUTfzF5sKcAhK1YOj3BFKF9QEI7wB3ctduULCC9ZIpYZ8_ZI-JVA&h=AT3ZElxc9shHFBFmMX8qVZjl020sgty3CnyRNrWNVpAmIjME4atl07JSWFXsFIKJaDaE5zdP4YESzsOKG2iUgIOACZ26VHyq_dqrt4BvGPzTzD5tnBi1NWPqP8NrIMpK1ObF",
         },
         {
             id: 3,
             name: "Email",
-            url: "#",
+            url: "mailto:mirfayekhossain@gmail.com",
         },
         {
             id: 4,
             name: "Github",
-            url: "#",
+            url: "https://github.com/Mir-Fayek-Hossain",
         },
     ]);
     return (
@@ -148,7 +149,7 @@ export default function Home() {
                             <button onClick={scrollTo90vh}>
                                 <BreakText word="Works" />
                             </button>
-                            <Link href="/contact">
+                            <Link href="/resume">
                                 <BreakText word="Resume" />
                             </Link>
                             <button onClick={scrollToBottom}>
