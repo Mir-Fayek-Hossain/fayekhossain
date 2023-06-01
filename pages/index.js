@@ -1,11 +1,13 @@
 import BreakText from "@/components/BreakText";
 import ExtendedImage from "@/components/ExtendedImage";
+import ResumeModal from "@/components/ResumeModal";
 import SmoothScroll from "@/components/SmoothScroll";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
+    const [resumeVisibility, setResumeVisibility] = useState(false);
     const [details, setdetails] = useState([
         {
             id: 0,
@@ -74,6 +76,9 @@ export default function Home() {
         const scrollHeight = windowHeight * 0.9;
         window.scrollTo(0, scrollHeight);
     };
+    const handleResume = () => {
+        setResumeVisibility(!resumeVisibility);
+    };
     const [contactData, setContactData] = useState([
         {
             id: 0,
@@ -138,6 +143,10 @@ export default function Home() {
                     </motion.h2>
                 </div>
             </div>
+            <ResumeModal
+                resumeVisibility={resumeVisibility}
+                setResumeVisibility={setResumeVisibility}
+            />
             <SmoothScroll>
                 <div className="w-full pt-[90vh] flex flex-col">
                     <div
@@ -149,9 +158,9 @@ export default function Home() {
                             <button onClick={scrollTo90vh}>
                                 <BreakText word="Works" />
                             </button>
-                            <Link href="/resume">
+                            <button onClick={handleResume}>
                                 <BreakText word="Resume" />
-                            </Link>
+                            </button>
                             <button onClick={scrollToBottom}>
                                 <BreakText word="Contacts" />
                             </button>
