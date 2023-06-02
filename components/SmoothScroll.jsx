@@ -45,10 +45,15 @@ const SmoothScroll = ({ children }) => {
             data.previous += (data.current - data.previous) * data.ease;
             data.rounded = Math.round(data.previous * 100) / 100;
             scrollingContainerRef.current.style.transform = `translateY(-${data.rounded}px)`;
+
             if (
                 data.current != data.rounded &&
                 data.rounded != Math.round(data.previous)
             ) {
+                console.log("window.scrollY", window.scrollY);
+                console.log("current", data.current);
+                console.log("previous", data.previous);
+                console.log("rounded", data.rounded);
                 // Recursive call untill reached target view
                 requestAnimationFrame(() => smoothScrollingHandler());
             }
