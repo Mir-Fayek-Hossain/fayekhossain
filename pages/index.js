@@ -21,7 +21,7 @@ export default function Home() {
             id: 1,
             name: "LOOX",
             thumb: "/static/projects/loox.png",
-            url: "https://xalian.vercel.app/",
+            url: "https://loox.com.bd/",
             stacks: ["Sveeltekit", "TailwindCSS"],
             description: "",
         },
@@ -114,7 +114,7 @@ export default function Home() {
             >
                 <div className="w-[90vw] relative h-[90vh]">
                     <motion.h2
-                        className="2xl:text-[200px] text-[140px] font-bold leading-tight"
+                        className="2xl:text-[200px] lg:text-[140px] text-[90px] font-bold leading-tight"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.1 }}
@@ -127,7 +127,7 @@ export default function Home() {
                         Software Engineer
                     </motion.h2>
                     <motion.h2
-                        className="absolute bottom-10 2xl:text-2xl text-xl right-0 w-[40vw]"
+                        className="absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 w-[40vw]"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.1 }}
@@ -150,7 +150,7 @@ export default function Home() {
             <SmoothScroll>
                 <div className="w-full pt-[90vh] flex flex-col">
                     <div
-                        className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2  2xl:text-2xl text-xl border-t  border-b"
+                        className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b"
                         id="works"
                     >
                         <h2 className="my-auto pl-10">Mir Fayek Hossain</h2>
@@ -177,11 +177,11 @@ export default function Home() {
                                     src={data.thumb}
                                     className="group-hover:opacity-25 group-hover:scale-110 duration-[.6s] opacity-75"
                                 />
-                                <div className="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 group-hover:opacity-100 opacity-0 duration-700 space-y-3">
-                                    <h2 className="font-bold  2xl:text-4xl text-2xl underline-animation after:duration-500 w-fit">
+                                <div className="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 group-hover:opacity-100 lg:opacity-0 duration-700 space-y-3">
+                                    <h2 className="font-bold  2xl:text-4xl lg:text-2xl text-base underline-animation after:duration-500 w-fit">
                                         {data.name}
                                     </h2>
-                                    <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
+                                    {/* <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
                                         {data.stacks.map((stack, idx) => (
                                             <span key={idx}>
                                                 {stack}
@@ -192,12 +192,12 @@ export default function Home() {
                                     </p>
                                     <p className="underline-animation after:duration-500 w-fit  2xl:text-base text-sm">
                                         {data?.description}
-                                    </p>
+                                    </p> */}
                                 </div>
                             </Link>
                         ))}
                         <div></div>
-                        <div className="relative w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl text-[55px] leading-[1] uppercase h-full">
+                        <div className="relative w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase h-full">
                             <h2 className="w-fit text-justify ">
                                 {/* LET’S MAKE SOMETHING TOGETHER, */}
                                 Don&apos;t be a stranger! Let&apos;s work
@@ -215,7 +215,7 @@ export default function Home() {
                                         className="h-full border-b"
                                         href={data.url}
                                     >
-                                        <li className="2xl:text-4xl text-2xl child w-full h-full flex items-center ml-10 duration-500">
+                                        <li className="2xl:text-4xl lg:text-2xl text-base child w-full h-full flex items-center ml-10 duration-500">
                                             <BreakText word={data.name} />
                                         </li>
                                     </Link>

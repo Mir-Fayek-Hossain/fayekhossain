@@ -21,7 +21,7 @@ const ResumeModal = ({ resumeVisibility, setResumeVisibility }) => {
     };
     return (
         <div
-            className={`fixed h-full w-full z-[999] top-0  transition-all duration-500 flex justify-center items-center ${
+            className={`fixed h-full w-full z-[999] top-0  transition-all duration-500 flex justify-center items-center overflow-hidden ${
                 resumeVisibility
                     ? "opacity-100 max-h-screen z-[999]"
                     : "opacity-0  max-h-0 -z-[99]"
