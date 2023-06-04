@@ -168,7 +168,7 @@ export default function Home() {
                     <div className="grid grid-cols-2 backdrop-blur-2xl overflow-x-hidden">
                         {details.map((data) => (
                              <div
-                                className="relative w-full  aspect-video bg-black group overflow-hidden project"
+                                className="relative w-full  H-[40vh] bg-black group overflow-hidden project"
                                 key={data.id}
                             >
                                 
