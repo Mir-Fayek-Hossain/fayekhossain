@@ -1,5 +1,4 @@
 import BreakText from "@/components/BreakText";
-import ExtendedImage from "@/components/ExtendedImage";
 import ResumeModal from "@/components/ResumeModal";
 import SmoothScroll from "@/components/SmoothScroll";
 import { motion } from "framer-motion";
@@ -167,13 +166,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="grid grid-cols-2 backdrop-blur-2xl overflow-x-hidden">
-                        {/* {details.map((data) => ( */}
-                            <div className="relative w-full aspect-[4/2] bg-black group overflow-hidden project">
-                               sLorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, ipsam. Odit in sapiente a eaque, ratione accusantium animi ut velit optio nobis recusandae quae, nemo repudiandae eveniet? Doloribus, temporibus laudantium.
-                            </div>
-                        {/* ))} */}
-                        <div></div>
-                        <div className="w-full aspect-video ">
+                        <div className="relative w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase h-full">
                             <h2 className="w-fit text-justify ">
                                 {/* LET’S MAKE SOMETHING TOGETHER, */}
                                 Don&apos;t be a stranger! Let&apos;s work
