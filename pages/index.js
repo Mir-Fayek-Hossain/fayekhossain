@@ -169,31 +169,11 @@ export default function Home() {
                     <div className="grid grid-cols-2 backdrop-blur-2xl overflow-x-hidden">
                         {/* {details.map((data) => ( */}
                             <div className="relative w-full aspect-[4/2] bg-black group overflow-hidden project">
-                                <ExtendedImage
-                                    src="/static/projects/xalian.PNG"
-                                    className="group-hover:opacity-25 group-hover:scale-110 duration-[.6s] opacity-75"
-                                />
-                                <div className="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 group-hover:opacity-100 lg:opacity-0 duration-700 space-y-3">
-                                    <h2 className="font-bold  2xl:text-4xl lg:text-2xl text-base underline-animation after:duration-500 w-fit">
-                                        sdds
-                                    </h2>
-                                    {/* <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
-                                        {data.stacks.map((stack, idx) => (
-                                            <span key={idx}>
-                                                {stack}
-                                                {idx + 1 !=
-                                                    data.stacks.length && ", "}
-                                            </span>
-                                        ))}
-                                    </p>
-                                    <p className="underline-animation after:duration-500 w-fit  2xl:text-base text-sm">
-                                        {data?.description}
-                                    </p> */}
-                                </div>
+                               sLorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, ipsam. Odit in sapiente a eaque, ratione accusantium animi ut velit optio nobis recusandae quae, nemo repudiandae eveniet? Doloribus, temporibus laudantium.
                             </div>
                         {/* ))} */}
                         <div></div>
-                        <div className="relative w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase h-full">
+                        <div className="w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase h-full">
                             <h2 className="w-fit text-justify ">
                                 {/* LET’S MAKE SOMETHING TOGETHER, */}
                                 Don&apos;t be a stranger! Let&apos;s work
