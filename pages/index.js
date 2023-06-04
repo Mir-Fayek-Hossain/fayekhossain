@@ -2,11 +2,12 @@ import BreakText from "@/components/BreakText";
 import ExtendedImage from "@/components/ExtendedImage";
 import ResumeModal from "@/components/ResumeModal";
 import SmoothScroll from "@/components/SmoothScroll";
-import { motion } from "framer-motion";
+import useWindowSize from "@/hooks/useWindowSize";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
+    const windowSize = useWindowSize();
     const [resumeVisibility, setResumeVisibility] = useState(false);
     const [details, setdetails] = useState([
         {
@@ -112,35 +113,10 @@ export default function Home() {
                 className="fixed top-0 w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}
             >
-                <div className="w-[90vw] relative h-[90vh]">
-                    <motion.h2
-                        className="2xl:text-[200px] lg:text-[140px] text-[90px] font-bold leading-tight"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.1 }}
-                        transition={{ delay: 1, duration: 0.5 }}
-                        variants={{
-                            hidden: { opacity: 0, x: -700 },
-                            visible: { opacity: 1, x: 0 },
-                        }}
-                    >
-                        Software Engineer
-                    </motion.h2>
-                    <motion.h2
-                        className="absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 w-[40vw]"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.1 }}
-                        transition={{ delay: 0.5, duration: 0.5 }}
-                        variants={{
-                            hidden: { opacity: 0, y: 100 },
-                            visible: { opacity: 1, y: 0 },
-                        }}
-                    >
-                        I’m Mir Fayek Hossain, a Front-end Developer and UI/UX
-                        specialist who thrives in creating unique data-driven
-                        design approaches.
-                    </motion.h2>
+                <div className="relative w-[20vw] aspect-square float-right rounded-full overflow-hidden">
+                    <ExtendedImage
+                        src="/me.png"
+                    />
                 </div>
             </div>
             <ResumeModal
@@ -148,7 +124,19 @@ export default function Home() {
                 setResumeVisibility={setResumeVisibility}
             />
             <SmoothScroll>
-                <div className="w-full pt-[90vh] flex flex-col">
+                <div className="w-full  flex flex-col">
+                    <div className="w-full h-[90vh] relative">
+                        <div className="2xl:text-[200px] lg:text-[140px] text-[90px] font-bold leading-tight">
+                            <h2>Mir</h2>
+                            <h2>Fayek</h2>
+                            <h2>Hossin</h2>
+                        </div>
+                        <h2 className="absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 w-[40vw]">
+                            I’m Mir Fayek Hossain, a Front-end Developer and
+                            UI/UX specialist who thrives in creating unique
+                            data-driven design approaches.
+                        </h2>
+                    </div>
                     <div
                         className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b"
                         id="works"
@@ -166,11 +154,12 @@ export default function Home() {
                             </button>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 backdrop-blur-2xl overflow-x-hidden">
+                    <div className="grid grid-cols-2 backdrop-blur-2xl overflow-hidden">
                         {details.map((data) => (
                             <Link
                                 href={data.url}
                                 key={data.id}
+                                target="_blank"
                                 className="relative w-full h-[50vh] bg-black group overflow-hidden project"
                             >
                                 <ExtendedImage
