@@ -173,7 +173,7 @@ export default function Home() {
                             </div>
                         {/* ))} */}
                         <div></div>
-                        <div className="w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase h-full">
+                        <div className="w-full aspect-video ">
                             <h2 className="w-fit text-justify ">
                                 {/* LET’S MAKE SOMETHING TOGETHER, */}
                                 Don&apos;t be a stranger! Let&apos;s work
