@@ -148,7 +148,7 @@ export default function Home() {
                 setResumeVisibility={setResumeVisibility}
             />
             <SmoothScroll>
-                <div className="w-full pt-[90vh] flex flex-col">
+                {/* <div className="w-full mt-[90vh] flex flex-col">
                     <div
                         className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b"
                         id="works"
@@ -181,25 +181,13 @@ export default function Home() {
                                     <h2 className="font-bold  2xl:text-4xl lg:text-2xl text-base underline-animation after:duration-500 w-fit">
                                         {data.name}
                                     </h2>
-                                    {/* <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
-                                        {data.stacks.map((stack, idx) => (
-                                            <span key={idx}>
-                                                {stack}
-                                                {idx + 1 !=
-                                                    data.stacks.length && ", "}
-                                            </span>
-                                        ))}
-                                    </p>
-                                    <p className="underline-animation after:duration-500 w-fit  2xl:text-base text-sm">
-                                        {data?.description}
-                                    </p> */}
+                                   
                                 </div>
                             </Link>
                         ))}
                         <div></div>
                         <div className="relative w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase h-full">
                             <h2 className="w-fit text-justify ">
-                                {/* LET’S MAKE SOMETHING TOGETHER, */}
                                 Don&apos;t be a stranger! Let&apos;s work
                                 Together,{" "}
                                 <span className="bg-brand text-black">
@@ -223,8 +211,26 @@ export default function Home() {
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> */}
+                <div className="opacity-50 h-screen bg-red-400"></div>
+                <div className="opacity-50 h-screen bg-green-400"></div>
             </SmoothScroll>
         </>
     );
 }
+
+
+
+
+ {/* <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
+                                        {data.stacks.map((stack, idx) => (
+                                            <span key={idx}>
+                                                {stack}
+                                                {idx + 1 !=
+                                                    data.stacks.length && ", "}
+                                            </span>
+                                        ))}
+                                    </p>
+                                    <p className="underline-animation after:duration-500 w-fit  2xl:text-base text-sm">
+                                        {data?.description}
+                                    </p> */}
