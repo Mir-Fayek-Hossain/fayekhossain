@@ -166,7 +166,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="grid grid-cols-2 backdrop-blur-2xl overflow-x-hidden">
-                       <p className="text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolorem tempore doloribus dicta saepe molestiae sed commodi ipsum magni officia cum, provident sequi nulla minus repellat dignissimos. Rem, nulla. Neque.</p>
+                       <div className="text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolorem tempore doloribus dicta saepe molestiae sed commodi ipsum magni officia cum, provident sequi nulla minus repellat dignissimos. Rem, nulla. Neque.</div>
                     </div>
                 </div>
             </SmoothScroll>
