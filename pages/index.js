@@ -162,7 +162,7 @@ export default function Home() {
                             <Link
                                 href={data.url}
                                 key={data.id}
-                                className="relative w-full aspect-[4/2] bg-black group overflow-hidden project"
+                                className="relative w-full h-[50vh] bg-black group overflow-hidden project"
                             >
                                 <ExtendedImage
                                     src={data.thumb}
@@ -188,7 +188,7 @@ export default function Home() {
                             </Link>
                         ))}
                         <div></div>
-                        <div className="relative w-full h-[50vh] flex justify-center items-center px-10 group 2xl:text-8xl text-[55px] leading-[1] uppercase ">
+                        <div className="relative w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl text-[55px] leading-[1] uppercase h-full">
                             <h2 className="w-fit text-justify ">
                                 {/* LET’S MAKE SOMETHING TOGETHER, */}
                                 Don&apos;t be a stranger! Let&apos;s work
