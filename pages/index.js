@@ -173,15 +173,27 @@ export default function Home() {
                                 className="relative w-full aspect-[4/2] bg-black group overflow-hidden project"
                                 key={data.id}
                             >
-                                <ExtendedImage
+                                {/* <ExtendedImage
                                     src={data.thumb}
                                     className="group-hover:opacity-25 group-hover:scale-110 duration-[.6s] opacity-75"
-                                />
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Accusantium dolorem tempore
-                                doloribus dicta saepe molestiae sed commodi
-                                ipsum magni officia cum, provident sequi nulla
-                                minus repellat dignissimos. Rem, nulla. Neque.
+                                /> */}
+                                  <div className="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 group-hover:opacity-100 opacity-0 duration-700 space-y-3">
+                                    <h2 className="font-bold  2xl:text-4xl text-2xl underline-animation after:duration-500 w-fit">
+                                        {data.name}
+                                    </h2>
+                                    {/* <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
+                                        {data.stacks.map((stack, idx) => (
+                                            <span key={idx}>
+                                                {stack}
+                                                {idx + 1 !=
+                                                    data.stacks.length && ", "}
+                                            </span>
+                                        ))}
+                                    </p>
+                                    <p className="underline-animation after:duration-500 w-fit  2xl:text-base text-sm">
+                                        {data?.description}
+                                    </p> */}
+                                </div>
                             </Link>
                         ))}
                     </div>
