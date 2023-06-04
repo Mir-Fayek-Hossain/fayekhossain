@@ -178,7 +178,7 @@ export default function Home() {
                                     className="group-hover:opacity-25 group-hover:scale-110 duration-[.6s] opacity-75"
                                 />
                                 <div className="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 group-hover:opacity-100 lg:opacity-0 duration-700 space-y-3">
-                                    <h2 className="font-bold  2xl:text-4xl lg:text-2xl text-base underline-animation after:duration-500 w-fit">
+                                    <h2 className="font-bold  2xl:text-4xl lg:text-2xl text-base underline-animation after:bg-white after:duration-500 w-fit">
                                         {data.name}
                                     </h2>
                                     {/* <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
@@ -197,7 +197,7 @@ export default function Home() {
                             </Link>
                         ))}
                         <div></div>
-                        <div className="relative w-full h-[50vh] flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase h-full">
+                        <div className="relative w-full h-[50vh] flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase">
                             <h2 className="w-fit text-justify ">
                                 {/* LET’S MAKE SOMETHING TOGETHER, */}
                                 Don&apos;t be a stranger! Let&apos;s work

@@ -121,7 +121,6 @@
     content: "";
     position: absolute;
     width: 100%;
-    background-color: white;
     transform: scaleX(0);
     height: 2px;
     bottom: 0;
