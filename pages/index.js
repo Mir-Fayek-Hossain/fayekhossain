@@ -167,8 +167,7 @@ export default function Home() {
                     </div>
                     <div className="grid grid-cols-2 backdrop-blur-2xl overflow-x-hidden">
                         {details.map((data) => (
-                             <Link
-                             href={data.url}
+                             <div
                                 className="relative w-full aspect-[4/2] bg-black group overflow-hidden project"
                                 key={data.id}
                             >
@@ -178,7 +177,7 @@ export default function Home() {
                                 doloribus dicta saepe molestiae sed commodi
                                 ipsum magni officia cum, provident sequi nulla
                                 minus repellat dignissimos. Rem, nulla. Neque.
-                            </Link>
+                            </div>
                         ))}
                     </div>
                 </div>
