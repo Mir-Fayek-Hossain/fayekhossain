@@ -166,31 +166,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="grid grid-cols-2 backdrop-blur-2xl overflow-x-hidden">
-                        <div className="relative w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase h-full">
-                            <h2 className="w-fit text-justify ">
-                                {/* LET’S MAKE SOMETHING TOGETHER, */}
-                                Don&apos;t be a stranger! Let&apos;s work
-                                Together,{" "}
-                                <span className="bg-brand text-black">
-                                    say hi!
-                                </span>
-                            </h2>
-                        </div>
-                        <div className="h-full" id="contacts">
-                            <ul className="flex flex-col h-full border-l parent">
-                                {contactData.map((data) => (
-                                    <Link
-                                        key={data.id}
-                                        className="h-full border-b"
-                                        href={data.url}
-                                    >
-                                        <li className="2xl:text-4xl lg:text-2xl text-base child w-full h-full flex items-center ml-10 duration-500">
-                                            <BreakText word={data.name} />
-                                        </li>
-                                    </Link>
-                                ))}
-                            </ul>
-                        </div>
+                       <p className="text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolorem tempore doloribus dicta saepe molestiae sed commodi ipsum magni officia cum, provident sequi nulla minus repellat dignissimos. Rem, nulla. Neque.</p>
                     </div>
                 </div>
             </SmoothScroll>
