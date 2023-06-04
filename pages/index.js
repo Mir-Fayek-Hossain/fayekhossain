@@ -1,5 +1,4 @@
 import BreakText from "@/components/BreakText";
-import ExtendedImage from "@/components/ExtendedImage";
 import ResumeModal from "@/components/ResumeModal";
 import SmoothScroll from "@/components/SmoothScroll";
 import { motion } from "framer-motion";
@@ -148,7 +147,7 @@ export default function Home() {
                 setResumeVisibility={setResumeVisibility}
             />
             <SmoothScroll>
-                {/* <div className="w-full mt-[90vh] flex flex-col">
+                <div className="w-full pt-[90vh] flex flex-col">
                     <div
                         className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b"
                         id="works"
@@ -167,27 +166,9 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="grid grid-cols-2 backdrop-blur-2xl overflow-x-hidden">
-                        {details.map((data) => (
-                            <Link
-                                href={data.url}
-                                key={data.id}
-                                className="relative w-full aspect-[4/2] bg-black group overflow-hidden project"
-                            >
-                                <ExtendedImage
-                                    src={data.thumb}
-                                    className="group-hover:opacity-25 group-hover:scale-110 duration-[.6s] opacity-75"
-                                />
-                                <div className="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 group-hover:opacity-100 lg:opacity-0 duration-700 space-y-3">
-                                    <h2 className="font-bold  2xl:text-4xl lg:text-2xl text-base underline-animation after:duration-500 w-fit">
-                                        {data.name}
-                                    </h2>
-                                   
-                                </div>
-                            </Link>
-                        ))}
-                        <div></div>
                         <div className="relative w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase h-full">
                             <h2 className="w-fit text-justify ">
+                                {/* LET’S MAKE SOMETHING TOGETHER, */}
                                 Don&apos;t be a stranger! Let&apos;s work
                                 Together,{" "}
                                 <span className="bg-brand text-black">
@@ -211,26 +192,8 @@ export default function Home() {
                             </ul>
                         </div>
                     </div>
-                </div> */}
-                <div className="opacity-50 h-screen bg-red-400"></div>
-                <div className="opacity-50 h-screen bg-green-400"></div>
+                </div>
             </SmoothScroll>
         </>
     );
 }
-
-
-
-
- {/* <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
-                                        {data.stacks.map((stack, idx) => (
-                                            <span key={idx}>
-                                                {stack}
-                                                {idx + 1 !=
-                                                    data.stacks.length && ", "}
-                                            </span>
-                                        ))}
-                                    </p>
-                                    <p className="underline-animation after:duration-500 w-fit  2xl:text-base text-sm">
-                                        {data?.description}
-                                    </p> */}
