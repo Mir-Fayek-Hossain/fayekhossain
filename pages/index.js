@@ -1,14 +1,16 @@
 import BreakText from "@/components/BreakText";
 import ExtendedImage from "@/components/ExtendedImage";
+import Head from "@/components/Head";
 import ResumeModal from "@/components/ResumeModal";
 import SmoothScroll from "@/components/SmoothScroll";
 import useWindowSize from "@/hooks/useWindowSize";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
     const windowSize = useWindowSize();
     const [resumeVisibility, setResumeVisibility] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [details, setdetails] = useState([
         {
             id: 0,
@@ -107,16 +109,39 @@ export default function Home() {
             url: "https://github.com/Mir-Fayek-Hossain",
         },
     ]);
+    useEffect(() => {
+        // Delayed function execution
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 5000);
+
+        // Clean up the timer when the component unmounts
+        return () => clearTimeout(timer);
+    }, []);
+    useEffect(() => {
+        if (loading) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+    }, [loading])
     return (
         <>
+           <Head
+                title="Mir Fayek Hossain"
+                ogTitle="aaaaaaaaaaaaaaaaa"
+            />
+            {loading && (
+                <div className="fixed top-0 w-full h-full z-[999] bg-cover bg-center"   style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}>
+                    loading
+                </div>
+            )}
             <div
                 className="fixed top-0 w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}
             >
                 <div className="relative w-[20vw] aspect-square float-right rounded-full overflow-hidden">
-                    <ExtendedImage
-                        src="/me.png"
-                    />
+                    <ExtendedImage src="/me.png" />
                 </div>
             </div>
             <ResumeModal
@@ -125,23 +150,23 @@ export default function Home() {
             />
             <SmoothScroll>
                 <div className="w-full  flex flex-col">
-                    <div className="w-full h-[90vh] relative">
-                        <div className="2xl:text-[200px] lg:text-[140px] text-[90px] font-bold leading-tight">
+                    <div className="w-full h-[90vh] relative ">
+                        <div className="2xl:text-[200px] lg:text-[140px] md:text-[90px] text-[50px] font-bold leading-tight md:px-0 px-5">
                             <h2>Mir</h2>
                             <h2>Fayek</h2>
                             <h2>Hossin</h2>
                         </div>
-                        <h2 className="absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 w-[40vw]">
+                        <h2 className="absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 md:w-[40vw] md:px-0 px-5">
                             I’m Mir Fayek Hossain, a Front-end Developer and
                             UI/UX specialist who thrives in creating unique
                             data-driven design approaches.
                         </h2>
                     </div>
                     <div
-                        className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b"
+                        className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b"
                         id="works"
                     >
-                        <h2 className="my-auto pl-10">Mir Fayek Hossain</h2>
+                        <h2 className="my-auto pl-10 md:block hidden">Mir Fayek Hossain</h2>
                         <div className="grid grid-cols-3 place-items-center border-l ">
                             <button onClick={scrollTo90vh}>
                                 <BreakText word="Works" />
@@ -154,13 +179,13 @@ export default function Home() {
                             </button>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 backdrop-blur-2xl overflow-hidden">
+                    <div className="grid md:grid-cols-2 backdrop-blur-2xl overflow-hidden">
                         {details.map((data) => (
                             <Link
                                 href={data.url}
                                 key={data.id}
                                 target="_blank"
-                                className="relative w-full h-[50vh] bg-black group overflow-hidden project"
+                                className="relative w-full lg:h-[50vh] md:h-[30vw] h-[70vw] bg-black group overflow-hidden project"
                             >
                                 <ExtendedImage
                                     src={data.thumb}
@@ -186,7 +211,7 @@ export default function Home() {
                             </Link>
                         ))}
                         <div></div>
-                        <div className="relative w-full h-[50vh] flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase">
+                        <div className="relative w-full lg:h-[50vh] md:h-[30vw] h-[70vw] flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase">
                             <h2 className="w-fit text-justify ">
                                 {/* LET’S MAKE SOMETHING TOGETHER, */}
                                 Don&apos;t be a stranger! Let&apos;s work
