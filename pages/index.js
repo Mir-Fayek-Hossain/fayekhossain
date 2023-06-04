@@ -1,11 +1,11 @@
 import BreakText from "@/components/BreakText";
-import ExtendedImage from "@/components/ExtendedImage";
+import ResumeModal from "@/components/ResumeModal";
 import SmoothScroll from "@/components/SmoothScroll";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
+    const [resumeVisibility, setResumeVisibility] = useState(false);
     const [details, setdetails] = useState([
         {
             id: 0,
@@ -19,7 +19,7 @@ export default function Home() {
             id: 1,
             name: "LOOX",
             thumb: "/static/projects/loox.png",
-            url: "https://xalian.vercel.app/",
+            url: "https://loox.com.bd/",
             stacks: ["Sveeltekit", "TailwindCSS"],
             description: "",
         },
@@ -74,6 +74,9 @@ export default function Home() {
         const scrollHeight = windowHeight * 0.9;
         window.scrollTo(0, scrollHeight);
     };
+    const handleResume = () => {
+        setResumeVisibility(!resumeVisibility);
+    };
     const [contactData, setContactData] = useState([
         {
             id: 0,
@@ -109,7 +112,7 @@ export default function Home() {
             >
                 <div className="w-[90vw] relative h-[90vh]">
                     <motion.h2
-                        className="2xl:text-[200px] text-[140px] font-bold leading-tight"
+                        className="2xl:text-[200px] lg:text-[140px] text-[90px] font-bold leading-tight"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.1 }}
@@ -122,7 +125,7 @@ export default function Home() {
                         Software Engineer
                     </motion.h2>
                     <motion.h2
-                        className="absolute bottom-10 2xl:text-2xl text-xl right-0 w-[40vw]"
+                        className="absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 w-[40vw]"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.1 }}
@@ -138,10 +141,14 @@ export default function Home() {
                     </motion.h2>
                 </div>
             </div>
+            <ResumeModal
+                resumeVisibility={resumeVisibility}
+                setResumeVisibility={setResumeVisibility}
+            />
             <SmoothScroll>
                 <div className="w-full pt-[90vh] flex flex-col">
                     <div
-                        className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2  2xl:text-2xl text-xl border-t  border-b"
+                        className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b"
                         id="works"
                     >
                         <h2 className="my-auto pl-10">Mir Fayek Hossain</h2>
@@ -149,69 +156,21 @@ export default function Home() {
                             <button onClick={scrollTo90vh}>
                                 <BreakText word="Works" />
                             </button>
-                            <Link href="/resume">
+                            <button onClick={handleResume}>
                                 <BreakText word="Resume" />
-                            </Link>
+                            </button>
                             <button onClick={scrollToBottom}>
                                 <BreakText word="Contacts" />
                             </button>
                         </div>
                     </div>
                     <div className="grid grid-cols-2 backdrop-blur-2xl overflow-x-hidden">
-                        {details.map((data) => (
-                            <Link
-                                href={data.url}
-                                key={data.id}
-                                className="relative w-full aspect-[4/2] bg-black group overflow-hidden project"
-                            >
-                                <ExtendedImage
-                                    src={data.thumb}
-                                    className="group-hover:opacity-25 group-hover:scale-110 duration-[.6s] opacity-75"
-                                />
-                                <div className="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 group-hover:opacity-100 opacity-0 duration-700 space-y-3">
-                                    <h2 className="font-bold  2xl:text-4xl text-2xl underline-animation after:duration-500 w-fit">
-                                        {data.name}
-                                    </h2>
-                                    {/* <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
-                                        {data.stacks.map((stack, idx) => (
-                                            <span key={idx}>
-                                                {stack}
-                                                {idx + 1 !=
-                                                    data.stacks.length && ", "}
-                                            </span>
-                                        ))}
-                                    </p>
-                                    <p className="underline-animation after:duration-500 w-fit  2xl:text-base text-sm">
-                                        {data?.description}
-                                    </p> */}
-                                </div>
-                            </Link>
-                        ))}
-                        <div></div>
-                        <div className="relative w-full aspect-video flex justify-center items-center px-10 group 2xl:text-8xl text-[55px] leading-[1] uppercase h-full">
-                            <h2 className="w-fit text-justify ">
-                                {/* LET’S MAKE SOMETHING TOGETHER, */}
-                                Don&apos;t be a stranger! Let&apos;s work
-                                Together,{" "}
-                                <span className="bg-brand text-black">
-                                    say hi!
-                                </span>
-                            </h2>
-                        </div>
-                        <div className="h-full" id="contacts">
-                            <ul className="flex flex-col h-full border-l parent">
-                                {contactData.map((data) => (
-                                    <Link
-                                        key={data.id}
-                                        className="h-full border-b"
-                                        href={data.url}
-                                    >
-                                        <li className="2xl:text-4xl text-2xl child w-full h-full flex items-center ml-10 duration-500">
-                                            <BreakText word={data.name} />
-                                        </li>
-                                    </Link>
-                                ))}
-                            </ul>
+                        <div className="text-2xl">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Accusantium dolorem tempore doloribus dicta
+                            saepe molestiae sed commodi ipsum magni officia cum,
+                            provident sequi nulla minus repellat dignissimos.
+                            Rem, nulla. Neque.
                         </div>
                     </div>
                 </div>
@@ -219,3 +178,4 @@ export default function Home() {
         </>
     );
 }
+;
