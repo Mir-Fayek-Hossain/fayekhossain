@@ -1,4 +1,5 @@
 import BreakText from "@/components/BreakText";
+import ExtendedImage from "@/components/ExtendedImage";
 import ResumeModal from "@/components/ResumeModal";
 import SmoothScroll from "@/components/SmoothScroll";
 import { motion } from "framer-motion";
@@ -167,11 +168,15 @@ export default function Home() {
                     </div>
                     <div className="grid grid-cols-2 backdrop-blur-2xl overflow-x-hidden">
                         {details.map((data) => (
-                             <Link
-                             href={data.url}
+                            <Link
+                                href={data.url}
                                 className="relative w-full aspect-[4/2] bg-black group overflow-hidden project"
                                 key={data.id}
                             >
+                                <ExtendedImage
+                                    src={data.thumb}
+                                    className="group-hover:opacity-25 group-hover:scale-110 duration-[.6s] opacity-75"
+                                />
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Accusantium dolorem tempore
                                 doloribus dicta saepe molestiae sed commodi
