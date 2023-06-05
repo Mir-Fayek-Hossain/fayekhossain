@@ -129,7 +129,7 @@ export default function Home() {
         <>
            <Head
                 title="Mir Fayek Hossain"
-                ogTitle="aaaaaaaaaaaaaaaaa"
+                ogTitle="Software Engineer"
             />
             {loading && (
                 <div className="fixed top-0 w-full h-full z-[999] bg-cover bg-center"   style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}>

@@ -2,19 +2,11 @@ import NextHead from "next/head";
 import { useRouter } from "next/router";
 import { memo } from "react";
 
-const Head = ({
-    children,
-    title,
-    keywords,
-    url,
-    link,
-    date,
-    image,
-    ogTitle,
-}) => {
+const Head = ({ children, title, ogTitle }) => {
     const router = useRouter();
-    const description=" I’m Mir Fayek Hossain, a Front-end Developer and UI/UX specialist who thrives in creating unique data-driven design approaches."
-    let pageTitle = title;
+    const description =
+        " I’m Mir Fayek Hossain, a Front-end Developer and UI/UX specialist who thrives in creating unique data-driven design approaches.";
+    let pageTitle = `${title} |  ${ogTitle}`;
     return (
         <NextHead>
             <meta key="charSet" charSet="UTF-8" />
@@ -31,32 +23,14 @@ const Head = ({
             />
             <meta key="title" name="title" content={ogTitle} />
 
-            {/* <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> */}
-            <link
-                rel="canonical"
-                href={`${process.env.NEXT_PUBLIC_APP_URL}${router.asPath}`}
-            />
+            <link rel="canonical" href={`${process.env.NEXT_PUBLIC_APP_URL}`} />
             <link rel="canonical" href={`${process.env.NEXT_PUBLIC_APP_URL}`} />
 
-            {/* <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> */}
             <meta key="description" name="description" content={description} />
-            {keywords && (
-                <meta key="keywords" name="keywords" content={keywords} />
-            )}
+
             <meta key="author" name="author" content={ogTitle} />
-            {date && (
-                <meta
-                    key="article:published_time"
-                    property="article:published_time"
-                    content={new Date(date).toISOString()}
-                />
-            )}
-            <meta
-                key="og:title"
-                property="og:title"
-                content={ogTitle}
-            />
+
+            <meta key="og:title" property="og:title" content={ogTitle} />
             <meta
                 key="og:description"
                 property="og:description"
@@ -66,24 +40,15 @@ const Head = ({
             {/* facebook */}
             <meta
                 property="og:url"
-                content={`${process.env.NEXT_PUBLIC_APP_URL}${router.asPath}`}
+                content={`${process.env.NEXT_PUBLIC_APP_URL}`}
             />
-            <link
-                rel="canonical"
-                href={`${process.env.NEXT_PUBLIC_APP_URL}${router.asPath}`}
-            />
+            <link rel="canonical" href={`${process.env.NEXT_PUBLIC_APP_URL}`} />
             <meta
                 key="og:image"
                 property="og:image"
-                content="/common/social-banner.jpg"
-                // content={`${process.env.NEXT_PUBLIC_APP_URL}/api/open-graph?title=${ogTitle}`}
+                content="/static/ogimage.PNG"
             />
-            <meta
-                key="image"
-                property="image"
-                content="/common/social-banner.jpg"
-                // content={`${process.env.NEXT_PUBLIC_APP_URL}/api/open-graph?title=${ogTitle}`}
-            />
+            <meta key="image" property="image" content="/static/ogimage.PNG" />
             <meta
                 key="og:image:width"
                 property="og:image:width"
@@ -101,12 +66,12 @@ const Head = ({
                 name="twitter:card"
                 content="summary_large_image"
             />
+            <meta key="twitter:title" name="twitter:title" content={ogTitle} />
             <meta
-                key="twitter:title"
-                name="twitter:title"
-                content={ogTitle}
+                key="twitter:creator"
+                name="twitter:creator"
+                content="@fayekhossain"
             />
-            <meta key="twitter:creator" name="twitter:creator" content="@bzm" />
             <meta
                 key="twitter:description"
                 name="twitter:description"
@@ -115,14 +80,9 @@ const Head = ({
             <meta
                 key="twitter:image"
                 name="twitter:image"
-                content="/common/social-banner.jpg"
-                // content={`${process.env.NEXT_PUBLIC_APP_URL}/api/open-graph?title=${ogTitle}`}
+                content="/static/ogimage.PNG"
             />
-            <meta
-                property="twitter:image"
-                content="/common/social-banner.jpg"
-                // content={`${process.env.NEXT_PUBLIC_APP_URL}/api/open-graph?title=${ogTitle}`}
-            />
+            <meta property="twitter:image" content="/static/ogimage.PNG" />
 
             <link
                 key="icon32"
