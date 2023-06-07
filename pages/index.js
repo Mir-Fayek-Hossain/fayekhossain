@@ -149,7 +149,7 @@ export default function Home() {
                 setResumeVisibility={setResumeVisibility}
             />
             <SmoothScroll>
-                <div className="w-full  flex flex-col">
+                <div className="w-full flex flex-col">
                     <div className="w-full h-[90vh] relative ">
                         <div className="text-[10vw] font-bold leading-tight md:px-0 px-5">
                             <h2 className="grd gradient-1">Mir</h2>
@@ -213,7 +213,7 @@ export default function Home() {
                             </Link>
                         ))}
                         <div></div>
-                        <div className="relative w-full lg:h-[50vh] md:h-[30vw] h-[70vw] flex justify-center items-center px-10 group 2xl:text-8xl lg:text-[55px] text-[36px] leading-[1] uppercase">
+                        <div className="relative w-full lg:h-[50vh] md:h-[30vw] h-[70vw] flex justify-center items-center px-10 group ld:text-[8vh] text-[4vw] leading-[1] uppercase">
                             <h2 className="w-fit text-justify ">
                                 {/* LET’S MAKE SOMETHING TOGETHER, */}
                                 Don&apos;t be a stranger! Let&apos;s work
@@ -223,12 +223,12 @@ export default function Home() {
                                 </span>
                             </h2>
                         </div>
-                        <div className="h-full" id="contacts">
-                            <ul className="flex flex-col h-full border-l parent">
+                        <div className="  lg:h-[50vh] md:h-[30vw] h-[70vw]" id="contacts">
+                            <ul className="flex flex-col h-full md:border-l parent">
                                 {contactData.map((data) => (
                                     <Link
                                         key={data.id}
-                                        className="h-full border-b"
+                                        className="h-full border-b md:border-t-0 border-t"
                                         href={data.url}
                                     >
                                         <li className="2xl:text-4xl lg:text-2xl text-base child w-full h-full flex items-center ml-10 duration-500">

@@ -21,7 +21,7 @@ const ResumeModal = ({ resumeVisibility, setResumeVisibility }) => {
     };
     return (
         <div
-            className={`fixed h-full w-full z-[999] top-0  transition-all duration-500 flex justify-center items-center overflow-hidden ${
+            className={`fixed h-full w-full z-[100] top-0  transition-all duration-500 flex justify-center items-center overflow-hidden ${
                 resumeVisibility
                     ? "opacity-100 max-h-screen z-[999]"
                     : "opacity-0  max-h-0 -z-[99]"
@@ -42,16 +42,19 @@ const ResumeModal = ({ resumeVisibility, setResumeVisibility }) => {
             <a
                 href="/Mir Fayek Hossain(CV).pdf"
                 download="cv"
-                className="absolute top-[1vh] bg-brand text-black"
+                className="absolute top-[1vh] bg-brand text-black md:block hidden"
             >
                 Download CV
             </a>
-            <div className="w-full flex justify-center items-center gap-6">
-                <button onClick={handlechange} className="text-4xl h-fit">
+            <div className="w-full md:flex  justify-center items-center gap-6 ">
+                <button
+                    onClick={handlechange}
+                    className="text-4xl h-fit md:block hidden"
+                >
                     {"<"}
                 </button>
 
-                <div className="relative h-[90vh] aspect-[8.2/10.7] bg-brand">
+                <div className="relative lg:h-[90vh] md:h-[80vh] h-[70vh] aspect-[8.2/10.7] bg-brand mx-auto">
                     <ExtendedImage
                         src="/static/cv/CV1.jpg"
                         className={`object-contain ${
@@ -65,9 +68,27 @@ const ResumeModal = ({ resumeVisibility, setResumeVisibility }) => {
                         }`}
                     />
                 </div>
-                <button onClick={handlechange} className="text-4xl h-fit">
+                <button
+                    onClick={handlechange}
+                    className="text-4xl h-fit md:block hidden"
+                >
                     {">"}
                 </button>
+                <div className="md:hidden w-full flex items-center justify-around mt-5">
+                    <button onClick={handlechange} className="text-4xl h-fit">
+                        {"<"}
+                    </button>
+                    <a
+                        href="/Mir Fayek Hossain(CV).pdf"
+                        download="cv"
+                        className=" text-black md:hidden block "
+                    >
+                        Download CV
+                    </a>
+                    <button onClick={handlechange} className="text-4xl h-fit">
+                        {">"}
+                    </button>
+                </div>
             </div>
             <div
                 className="bg-center bg-cover absolute w-full h-full  -z-[1]  blur-md scale-110"
