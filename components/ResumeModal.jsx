@@ -23,11 +23,11 @@ const ResumeModal = ({ resumeVisibility, setResumeVisibility }) => {
         <div
             className={`fixed h-full w-full z-[100] top-0  transition-all duration-500 flex justify-center items-center overflow-hidden ${
                 resumeVisibility
-                    ? "opacity-100 max-h-screen z-[999]"
+                    ? "opacity-100 max-h-screen z-[100]"
                     : "opacity-0  max-h-0 -z-[99]"
             }`}
         >
-            <div className="absolute z-[999] p-4 right-0 top-0">
+            <div className="absolute z-[100] p-4 right-0 top-0">
                 <button
                     className="rounded-full  p-1 group border-2 border-slate-600"
                     onClick={() => {

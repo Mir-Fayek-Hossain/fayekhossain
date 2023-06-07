@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
     const windowSize = useWindowSize();
     const [resumeVisibility, setResumeVisibility] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [details, setdetails] = useState([
         {
             id: 0,
