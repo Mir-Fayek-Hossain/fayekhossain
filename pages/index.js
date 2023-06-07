@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
     const windowSize = useWindowSize();
     const [resumeVisibility, setResumeVisibility] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [details, setdetails] = useState([
         {
             id: 0,
@@ -124,15 +124,15 @@ export default function Home() {
         } else {
             document.body.style.overflow = "unset";
         }
-    }, [loading])
+    }, [loading]);
     return (
         <>
-           <Head
-                title="Mir Fayek Hossain"
-                ogTitle="Software Engineer"
-            />
+            <Head title="Mir Fayek Hossain" ogTitle="Software Engineer" />
             {loading && (
-                <div className="fixed top-0 w-full h-full z-[999] bg-cover bg-center"   style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}>
+                <div
+                    className="fixed top-0 w-full h-full z-[999] bg-cover bg-center"
+                    style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}
+                >
                     loading
                 </div>
             )}
@@ -140,7 +140,7 @@ export default function Home() {
                 className="fixed top-0 w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}
             >
-                <div className="relative w-[20vw] aspect-square float-right rounded-full overflow-hidden">
+                <div className="relative w-[30vh] aspect-square float-right rounded-full overflow-hidden">
                     <ExtendedImage src="/me.png" />
                 </div>
             </div>
@@ -151,10 +151,10 @@ export default function Home() {
             <SmoothScroll>
                 <div className="w-full  flex flex-col">
                     <div className="w-full h-[90vh] relative ">
-                        <div className="2xl:text-[200px] lg:text-[140px] md:text-[90px] text-[50px] font-bold leading-tight md:px-0 px-5">
-                            <h2>Mir</h2>
-                            <h2>Fayek</h2>
-                            <h2>Hossin</h2>
+                        <div className="text-[10vw] font-bold leading-tight md:px-0 px-5">
+                            <h2 className="grd gradient-1">Mir</h2>
+                            <h2 className="grd">Fayek</h2>
+                            <h2 className="grd gradient-3">Hossin</h2>
                         </div>
                         <h2 className="absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 md:w-[40vw] md:px-0 px-5">
                             I’m Mir Fayek Hossain, a Front-end Developer and
@@ -166,7 +166,9 @@ export default function Home() {
                         className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b"
                         id="works"
                     >
-                        <h2 className="my-auto pl-10 md:block hidden">Mir Fayek Hossain</h2>
+                        <h2 className="my-auto pl-10 md:block hidden">
+                            Mir Fayek Hossain
+                        </h2>
                         <div className="grid grid-cols-3 place-items-center border-l ">
                             <button onClick={scrollTo90vh}>
                                 <BreakText word="Works" />
