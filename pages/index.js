@@ -15,7 +15,7 @@ export default function Home() {
         {
             id: 0,
             name: "Codecony",
-            thumb: "/static/projects/codecony.png",
+            thumb: "/static/projects/codecony.jpg",
             url: "https://codecony.vercel.app",
             stacks: ["NextJS", "TailwindCSS"],
             description: "",
@@ -31,7 +31,7 @@ export default function Home() {
         {
             id: 2,
             name: "Photo Production Process",
-            thumb: "/static/projects/client-area.PNG",
+            thumb: "/static/projects/client-area.jpg",
             url: "https://ppp.bzmgraphics.com/",
             stacks: ["Laravel", "AlpineJS", "TailwindCSS"],
             description: "",
@@ -39,7 +39,7 @@ export default function Home() {
         {
             id: 3,
             name: "bZm Graphics ltd",
-            thumb: "/static/projects/bzmm.png",
+            thumb: "/static/projects/bzm.jpg",
             url: "http://bzmgraphics.com",
             stacks: ["NextJS", "TailwindCSS"],
             description: "Production Level Project",
@@ -65,7 +65,7 @@ export default function Home() {
         {
             id: 6,
             name: "Xalian",
-            thumb: "/static/projects/xalian.PNG",
+            thumb: "/static/projects/xalian.jpg",
             url: "https://xalian.vercel.app/",
             stacks: ["ReactJS", "TailwindCSS"],
             description: "",
@@ -129,15 +129,21 @@ export default function Home() {
         <>
             <Head title="Mir Fayek Hossain" ogTitle="Software Engineer" />
             {loading && (
-                <div
-                    className="fixed top-0 w-full h-full z-[999] bg-cover bg-center"
-                    style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}
-                >
-                    loading
+                <div className="fixed top-0 w-full h-full z-[999]">
+                    <div className="relative w-full h-full flex justify-center items-center">
+                        <ExtendedImage
+                            src="/static/hero-bg.jpg"
+                            className="-z-10"
+                            priority
+                        />
+                        Turning Coffee into Code
+                    </div>
                 </div>
             )}
             <div
-                className="fixed top-0 w-full h-full bg-cover bg-center"
+                className={`fixed top-0 w-full h-full bg-cover bg-center  ${
+                    loading && "opacity-0"
+                } duration-500`}
                 style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}
             >
                 <div className="relative w-[30vh] aspect-square float-right rounded-full overflow-hidden">
@@ -149,7 +155,11 @@ export default function Home() {
                 setResumeVisibility={setResumeVisibility}
             />
             <SmoothScroll>
-                <div className="w-full flex flex-col">
+                <div
+                    className={`w-full flex flex-col ${
+                        loading && "opacity-0"
+                    } duration-500`}
+                >
                     <div className="w-full h-[90vh] relative ">
                         <div className="text-[10vw] font-bold leading-tight md:px-0 px-5">
                             <h2 className="grd gradient-1">Mir</h2>
@@ -223,7 +233,10 @@ export default function Home() {
                                 </span>
                             </h2>
                         </div>
-                        <div className="  lg:h-[50vh] md:h-[30vw] h-[70vw]" id="contacts">
+                        <div
+                            className="  lg:h-[50vh] md:h-[30vw] h-[70vw]"
+                            id="contacts"
+                        >
                             <ul className="flex flex-col h-full md:border-l parent">
                                 {contactData.map((data) => (
                                     <Link

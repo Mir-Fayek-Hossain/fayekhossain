@@ -46,9 +46,9 @@ const Head = ({ children, title, ogTitle }) => {
             <meta
                 key="og:image"
                 property="og:image"
-                content="/static/ogimage.PNG"
+                content="/static/ogimage.jpg"
             />
-            <meta key="image" property="image" content="/static/ogimage.PNG" />
+            <meta key="image" property="image" content="/static/ogimage.jpg" />
             <meta
                 key="og:image:width"
                 property="og:image:width"
@@ -80,9 +80,9 @@ const Head = ({ children, title, ogTitle }) => {
             <meta
                 key="twitter:image"
                 name="twitter:image"
-                content="/static/ogimage.PNG"
+                content="/static/ogimage.jpg"
             />
-            <meta property="twitter:image" content="/static/ogimage.PNG" />
+            <meta property="twitter:image" content="/static/ogimage.jpg" />
 
             <link
                 key="icon32"
