@@ -114,7 +114,6 @@ export default function Home() {
         const timer = setTimeout(() => {
             setLoading(false);
         }, 5000);
-
         // Clean up the timer when the component unmounts
         return () => clearTimeout(timer);
     }, []);
@@ -130,13 +129,27 @@ export default function Home() {
             <Head title="Mir Fayek Hossain" ogTitle="Software Engineer" />
             {loading && (
                 <div className="fixed top-0 w-full h-full z-[999]">
-                    <div className="relative w-full h-full flex justify-center items-center">
+                    <div className="relative w-full h-full flex justify-center items-center ">
                         <ExtendedImage
                             src="/static/hero-bg.jpg"
                             className="-z-10"
                             priority
                         />
-                        Turning Coffee into Code
+                        <div className="grid grid-cols-2">
+                            <div class="loader">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                                <div class="cup">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div className="place-self-end">
+                                <h2>Turning</h2> <h2>Coffee</h2> <h2>into Code</h2>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}
