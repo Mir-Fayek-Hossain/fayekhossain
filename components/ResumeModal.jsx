@@ -21,7 +21,7 @@ const ResumeModal = ({ resumeVisibility, setResumeVisibility }) => {
     };
     return (
         <div
-            className={`fixed h-full w-full z-[100] top-0  transition-all duration-500 flex justify-center items-center overflow-hidden ${
+            className={`fixed h-full w-full z-[200] top-0  transition-all duration-500 flex justify-center items-center overflow-hidden ${
                 resumeVisibility
                     ? "opacity-100 max-h-screen z-[100]"
                     : "opacity-0  max-h-0 -z-[99]"
@@ -46,7 +46,7 @@ const ResumeModal = ({ resumeVisibility, setResumeVisibility }) => {
             >
                 Download CV
             </a>
-            <div className="w-full md:flex  justify-center items-center gap-6 ">
+            <div className="w-fit md:flex justify-center items-center gap-6 ">
                 <button
                     onClick={handlechange}
                     className="text-4xl h-fit md:block hidden"

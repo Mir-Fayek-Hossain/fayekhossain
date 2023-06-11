@@ -5,12 +5,14 @@ import ResumeModal from "@/components/ResumeModal";
 import SmoothScroll from "@/components/SmoothScroll";
 import useWindowSize from "@/hooks/useWindowSize";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
     const windowSize = useWindowSize();
     const [resumeVisibility, setResumeVisibility] = useState(false);
     const [loading, setLoading] = useState(true);
+    const fixedElementRef = useRef(null);
+
     const [details, setdetails] = useState([
         {
             id: 0,
@@ -71,12 +73,42 @@ export default function Home() {
             description: "",
         },
     ]);
+    const windowHeight = windowSize?.height;
+    const scrollHeight = windowHeight * 0.9;
+    useEffect(() => {
+        const handleScroll = () => {
+            // Calculate the scroll position relative to the viewport height
+            const scrollPosition =
+                window.scrollY / (document.documentElement.clientHeight * 0.9);
+
+            // Check if the scroll position is at or beyond 90vh
+            if (scrollPosition >= 1) {
+                // Fix the element at the top of the page
+                fixedElementRef.current.style.position = "fixed";
+                fixedElementRef.current.style.top = "0";
+                fixedElementRef.current.style.zIndex = "100";
+                fixedElementRef.current.style.opacity = "1";
+            } else {
+                // Unfix the element
+                fixedElementRef.current.style.position = "relative";
+                fixedElementRef.current.style.top = "auto";
+                fixedElementRef.current.style.zIndex = "-100";
+                fixedElementRef.current.style.opacity = "0"; // Resetting opacity to 1
+            }
+        };
+
+        // Add the scroll event listener when the component mounts
+        window.addEventListener("scroll", handleScroll);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
     const scrollToBottom = () => {
         window.scrollTo(0, document.body.scrollHeight);
     };
     const scrollTo90vh = () => {
-        const windowHeight = window.innerHeight;
-        const scrollHeight = windowHeight * 0.9;
         window.scrollTo(0, scrollHeight);
     };
     const handleResume = () => {
@@ -113,7 +145,7 @@ export default function Home() {
         // Delayed function execution
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 5000);
+        }, 500);
         // Clean up the timer when the component unmounts
         return () => clearTimeout(timer);
     }, []);
@@ -136,18 +168,19 @@ export default function Home() {
                             priority
                         />
                         <div className="grid grid-cols-2">
-                            <div class="loader">
+                            <div className="loader">
                                 <ul>
                                     <li></li>
                                     <li></li>
                                     <li></li>
                                 </ul>
-                                <div class="cup">
+                                <div className="cup">
                                     <span></span>
                                 </div>
                             </div>
                             <div className="place-self-end">
-                                <h2>Turning</h2> <h2>Coffee</h2> <h2>into Code</h2>
+                                <h2>Turning</h2> <h2>Coffee</h2>{" "}
+                                <h2>into Code</h2>
                             </div>
                         </div>
                     </div>
@@ -163,6 +196,25 @@ export default function Home() {
                     <ExtendedImage src="/me.png" />
                 </div>
             </div>
+            <div
+                className={`opacity-0 -z-[100] min-h-[10vh] max-h-[10vh] w-full backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b duration-1000 delay-100`}
+                ref={fixedElementRef}
+            >
+                <h2 className="my-auto pl-10 md:block hidden">
+                    Mir Fayek Hossain
+                </h2>
+                <div className="grid grid-cols-3 place-items-center border-l ">
+                    <button onClick={scrollTo90vh}>
+                        <BreakText word="Works" />
+                    </button>
+                    <button onClick={handleResume}>
+                        <BreakText word="Resume" />
+                    </button>
+                    <button onClick={scrollToBottom}>
+                        <BreakText word="Contacts" />
+                    </button>
+                </div>
+            </div>
             <ResumeModal
                 resumeVisibility={resumeVisibility}
                 setResumeVisibility={setResumeVisibility}
@@ -171,22 +223,34 @@ export default function Home() {
                 <div
                     className={`w-full flex flex-col ${
                         loading && "opacity-0"
-                    } duration-500`}
+                    } duration-1000`}
                 >
                     <div className="w-full h-[90vh] relative ">
-                        <div className="text-[10vw] font-bold leading-tight md:px-0 px-5">
+                        <div
+                            className={`text-[10vw] font-bold leading-tight md:px-0 px-5  ${
+                                loading
+                                    ? "translate-x-[-50vw]"
+                                    : "translate-x-[0vw]"
+                            } duration-1000 delay-500`}
+                        >
                             <h2 className="grd gradient-1">Mir</h2>
                             <h2 className="grd">Fayek</h2>
                             <h2 className="grd gradient-3">Hossin</h2>
                         </div>
-                        <h2 className="absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 md:w-[40vw] md:px-0 px-5">
+                        <h2
+                            className={`absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 md:w-[40vw] md:px-0 px-5 ${
+                                loading && "opacity-0"
+                            } duration-700 delay-200`}
+                        >
                             I’m Mir Fayek Hossain, a Front-end Developer and
                             UI/UX specialist who thrives in creating unique
                             data-driven design approaches.
                         </h2>
                     </div>
                     <div
-                        className="min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b"
+                        className={`min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b ${
+                            loading && "translate-y-[10vh] opacity-0"
+                        } duration-1000 delay-100`}
                         id="works"
                     >
                         <h2 className="my-auto pl-10 md:block hidden">

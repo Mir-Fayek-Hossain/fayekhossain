@@ -50,10 +50,10 @@ const SmoothScroll = ({ children }) => {
                 data.current != data.rounded &&
                 data.rounded != Math.round(data.previous)
             ) {
-                console.log("window.scrollY", window.scrollY);
-                console.log("current", data.current);
-                console.log("previous", data.previous);
-                console.log("rounded", data.rounded);
+                // console.log("window.scrollY", window.scrollY);
+                // console.log("current", data.current);
+                // console.log("previous", data.previous);
+                // console.log("rounded", data.rounded);
                 // Recursive call untill reached target view
                 requestAnimationFrame(() => smoothScrollingHandler());
             }
