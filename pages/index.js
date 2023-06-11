@@ -119,33 +119,38 @@ export default function Home() {
             id: 0,
             name: "LinkedIn",
             url: "https://www.linkedin.com/in/mir-fayek-hossain-49920a233/",
+            description: "Serious Me",
         },
         {
             id: 1,
             name: "Facebook",
             url: "https://www.facebook.com/fayek.hossain.5/",
+            description: "Doodler Model",
         },
         {
             id: 2,
-            name: "Instagram",
-            url: "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Ffayekhossain%3Ffbclid%3DIwAR1Kb7iPUTfzF5sKcAhK1YOj3BFKF9QEI7wB3ctduULCC9ZIpYZ8_ZI-JVA&h=AT3ZElxc9shHFBFmMX8qVZjl020sgty3CnyRNrWNVpAmIjME4atl07JSWFXsFIKJaDaE5zdP4YESzsOKG2iUgIOACZ26VHyq_dqrt4BvGPzTzD5tnBi1NWPqP8NrIMpK1ObF",
+            name: "Email",
+            url: "mailto:mirfayekhossain@gmail.com",
+            description: "100% chance i read it",
         },
         {
             id: 3,
-            name: "Email",
-            url: "mailto:mirfayekhossain@gmail.com",
+            name: "Github",
+            url: "https://github.com/Mir-Fayek-Hossain",
+            description: "My Personal Jurasic World",
         },
         {
             id: 4,
-            name: "Github",
-            url: "https://github.com/Mir-Fayek-Hossain",
+            name: "Instagram",
+            url: "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Ffayekhossain%3Ffbclid%3DIwAR1Kb7iPUTfzF5sKcAhK1YOj3BFKF9QEI7wB3ctduULCC9ZIpYZ8_ZI-JVA&h=AT3ZElxc9shHFBFmMX8qVZjl020sgty3CnyRNrWNVpAmIjME4atl07JSWFXsFIKJaDaE5zdP4YESzsOKG2iUgIOACZ26VHyq_dqrt4BvGPzTzD5tnBi1NWPqP8NrIMpK1ObF",
+            description: "Aristic-Me",
         },
     ]);
     useEffect(() => {
         // Delayed function execution
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 500);
+        }, 5000);
         // Clean up the timer when the component unmounts
         return () => clearTimeout(timer);
     }, []);
@@ -167,7 +172,7 @@ export default function Home() {
                             className="-z-10"
                             priority
                         />
-                        <div className="grid grid-cols-2">
+                        <div className="flex gap-4 items-end">
                             <div className="loader">
                                 <ul>
                                     <li></li>
@@ -178,9 +183,16 @@ export default function Home() {
                                     <span></span>
                                 </div>
                             </div>
-                            <div className="place-self-end">
+                            <div>
                                 <h2>Turning</h2> <h2>Coffee</h2>{" "}
-                                <h2>into Code</h2>
+                                <div className="flex">
+                                    <h2>into Code</h2>
+                                    <div className="self-end bouncing-loader pb-1">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -207,9 +219,12 @@ export default function Home() {
                     <button onClick={scrollTo90vh}>
                         <BreakText word="Works" />
                     </button>
-                    <button onClick={handleResume}>
+                    <Link
+                        href="https://www.dropbox.com/s/9s6emxyof02a0tz/Mir%20Fayek%20Hossain%28CV%29.pdf?dl=0s"
+                        target="_blanks"
+                    >
                         <BreakText word="Resume" />
-                    </button>
+                    </Link>
                     <button onClick={scrollToBottom}>
                         <BreakText word="Contacts" />
                     </button>
@@ -260,9 +275,14 @@ export default function Home() {
                             <button onClick={scrollTo90vh}>
                                 <BreakText word="Works" />
                             </button>
-                            <button onClick={handleResume}>
+                            {/* <button onClick={handleResume}> */}
+                            <Link
+                                href="https://www.dropbox.com/s/9s6emxyof02a0tz/Mir%20Fayek%20Hossain%28CV%29.pdf?dl=0s"
+                                target="_blanks"
+                            >
                                 <BreakText word="Resume" />
-                            </button>
+                            </Link>
+                            {/* </button> */}
                             <button onClick={scrollToBottom}>
                                 <BreakText word="Contacts" />
                             </button>
@@ -300,13 +320,23 @@ export default function Home() {
                             </Link>
                         ))}
                         <div></div>
-                        <div className="relative w-full lg:h-[50vh] md:h-[30vw] h-[70vw] flex justify-center items-center px-10 group ld:text-[8vh] text-[4vw] leading-[1] uppercase">
-                            <h2 className="w-fit text-justify ">
-                                {/* LET’S MAKE SOMETHING TOGETHER, */}
+                        <div className="relative group w-full lg:h-[50vh] md:h-[30vw] h-[70vw] flex justify-center items-center px-10 group lg:text-[9vh] text-[4vh] leading-[1] uppercase">
+                            <h2 className="w-fit text-justify group-hover:opacity-0 duration-500">
                                 Don&apos;t be a stranger! Let&apos;s work
-                                Together,{" "}
+                                Together,
+                                <br />
                                 <span className="bg-brand text-black">
                                     say hi!
+                                </span>
+                            </h2>
+                            <h2 className="px-10 text-justify absolute -z-[100] opacity-0 group-hover:z-10 group-hover:opacity-100 duration-500">
+                                {/* Feel free to be a stranger! Let&apos;s work
+                                solo, */}
+                                Please stay a stranger! Let&apos;s work
+                                Separately,
+                                <br />
+                                <span className="bg-brand text-black">
+                                    & No hellos
                                 </span>
                             </h2>
                         </div>
@@ -321,8 +351,11 @@ export default function Home() {
                                         className="h-full border-b md:border-t-0 border-t"
                                         href={data.url}
                                     >
-                                        <li className="2xl:text-4xl lg:text-2xl text-base child w-full h-full flex items-center ml-10 duration-500">
-                                            <BreakText word={data.name} />
+                                        <li className="2xl:text-4xl lg:text-2xl text-base child w-full h-full flex items-center md:ml-10 duration-500">
+                                            <BreakText
+                                                word={data.name}
+                                                titleDetails={data?.description}
+                                            />
                                         </li>
                                     </Link>
                                 ))}
