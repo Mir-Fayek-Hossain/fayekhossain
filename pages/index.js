@@ -55,23 +55,23 @@ export default function Home() {
             stacks: ["HTML5", "JQuery"],
             description: "",
         },
-        {
-            id: 5,
-            name: "Netflix Clone",
-            thumb: "/static/projects/netflix.png",
-            url: "#",
-            stacks: ["NextJS", "TailwindCSS"],
-            description: "",
-        },
+        // {
+        //     id: 5,
+        //     name: "Netflix Clone",
+        //     thumb: "/static/projects/netflix.png",
+        //     url: "#",
+        //     stacks: ["NextJS", "TailwindCSS"],
+        //     description: "",
+        // },
 
-        {
-            id: 6,
-            name: "Xalian",
-            thumb: "/static/projects/xalian.jpg",
-            url: "https://xalian.vercel.app/",
-            stacks: ["ReactJS", "TailwindCSS"],
-            description: "",
-        },
+        // {
+        //     id: 6,
+        //     name: "Xalian",
+        //     thumb: "/static/projects/xalian.jpg",
+        //     url: "https://xalian.vercel.app/",
+        //     stacks: ["ReactJS", "TailwindCSS"],
+        //     description: "",
+        // },
     ]);
     const windowHeight = windowSize?.height;
     const scrollHeight = windowHeight * 0.9;
@@ -320,8 +320,8 @@ export default function Home() {
                             </Link>
                         ))}
                         <div></div>
-                        <div className="relative group w-full lg:h-[50vh] md:h-[30vw] h-[70vw] flex justify-center items-center px-10 group lg:text-[9vh] text-[4vh] leading-[1] uppercase">
-                            <h2 className="w-fit text-justify group-hover:opacity-0 duration-500">
+                        <div className="relative  w-full lg:h-[50vh] md:h-[30vw] h-[70vw] flex justify-center items-center px-10 group lg:text-[9vh] text-[4vh] leading-[1] uppercase">
+                            <h2 className="w-fit text-justify ">
                                 Don&apos;t be a stranger! Let&apos;s work
                                 Together,
                                 <br />
@@ -329,16 +329,15 @@ export default function Home() {
                                     say hi!
                                 </span>
                             </h2>
-                            <h2 className="px-10 text-justify absolute -z-[100] opacity-0 group-hover:z-10 group-hover:opacity-100 duration-500">
-                                {/* Feel free to be a stranger! Let&apos;s work
-                                solo, */}
+                            {/* <h2 className="px-10 text-justify absolute -z-[100] opacity-0 group-hover:z-10 group-hover:opacity-100 duration-500">
+                                
                                 Please stay a stranger! Let&apos;s work
                                 Separately,
                                 <br />
                                 <span className="bg-brand text-black">
                                     & No hellos
                                 </span>
-                            </h2>
+                            </h2> */}
                         </div>
                         <div
                             className="  lg:h-[50vh] md:h-[30vw] h-[70vw]"
