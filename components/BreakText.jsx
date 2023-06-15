@@ -16,10 +16,11 @@ const BreakText = ({ word, titleDetails }) => {
 
             {titleDetails && (
                 <div
-                    className="-z-10 w-full h-full title-details  overflow-hidden absolute top-1/2 pr-[5vw] transform -translate-y-1/2 duration-500 flex items-center justify-end
-"
+                    className="-z-10 w-full h-full title-details  overflow-hidden absolute top-1/2  transform -translate-y-1/2 duration-500 flex items-center justify-end"
                 >
-                    <p className="font-extralight 2xl:text-xl lg:text-base text-xs">{titleDetails}</p>
+                    <p className="font-extralight 2xl:text-xl lg:text-base text-[10px] md:pr-[5vw] pr-[10vw]">
+                        {titleDetails}
+                    </p>
                 </div>
             )}
         </h2>

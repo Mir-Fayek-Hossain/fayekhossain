@@ -250,76 +250,73 @@ export default function Home() {
                 setResumeVisibility={setResumeVisibility}
             />
             <SmoothScroll>
-                <div
-                    className={`w-full flex flex-col ${
-                        loading && "opacity-0"
-                    } duration-1000`}
-                >
-                    <div className="w-full h-[90vh] relative ">
-                        <div
-                            className={`text-[10vw] font-bold leading-tight md:px-0 px-5  ${
-                                loading
-                                    ? "translate-x-[-50vw]"
-                                    : "translate-x-[0vw]"
-                            } duration-1000 delay-500`}
-                        >
-                            <h2 className="grd gradient-1">Mir</h2>
-                            <h2 className="grd">Fayek</h2>
-                            <h2 className="grd gradient-3">Hossin</h2>
-                        </div>
-                        <h2
-                            className={`absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 md:w-[40vw] md:px-0 px-5 ${
-                                loading && "opacity-0"
-                            } duration-700 delay-200`}
-                        >
-                            I’m Mir Fayek Hossain, a Front-end Developer and
-                            UI/UX specialist who thrives in creating unique
-                            data-driven design approaches.
-                        </h2>
-                    </div>
+            <div
+                className={`w-full flex flex-col ${
+                    loading && "opacity-0"
+                } duration-1000`}
+            >
+                <div className="w-full h-[90vh] relative ">
                     <div
-                        className={`min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b ${
-                            loading && "translate-y-[10vh] opacity-0"
-                        } duration-1000 delay-100`}
-                        id="works"
+                        className={`text-[10vw] font-bold leading-tight md:px-0 px-5  ${
+                            loading
+                                ? "translate-x-[-50vw]"
+                                : "translate-x-[0vw]"
+                        } duration-1000 delay-500`}
                     >
-                        <h2 className="my-auto pl-10 md:block hidden">
-                            Mir Fayek Hossain
-                        </h2>
-                        <div className="grid grid-cols-3 place-items-center border-l ">
-                            <button onClick={scrollTo90vh}>
-                                <BreakText word="Works" />
-                            </button>
-                            {/* <button onClick={handleResume}> */}
-                            <Link
-                                href="/mir-fayek-hossain-cv"
-                                target="_blanks"
-                            >
-                                <BreakText word="Resume" />
-                            </Link>
-                            {/* </button> */}
-                            <button onClick={scrollToBottom}>
-                                <BreakText word="Contacts" />
-                            </button>
-                        </div>
+                        <h2 className="grd gradient-1">Mir</h2>
+                        <h2 className="grd">Fayek</h2>
+                        <h2 className="grd gradient-3">Hossin</h2>
                     </div>
-                    <div className="grid md:grid-cols-2 backdrop-blur-2xl overflow-hidden">
-                        {details.map((data) => (
-                            <Link
-                                href={data.url}
-                                key={data.id}
-                                target="_blank"
-                                className="relative w-full lg:h-[50vh] md:h-[30vw] h-[70vw] bg-black group overflow-hidden project"
-                            >
-                                <ExtendedImage
-                                    src={data.thumb}
-                                    className="group-hover:opacity-25 group-hover:scale-110 duration-[.6s] opacity-75"
-                                />
-                                <div className="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 group-hover:opacity-100 lg:opacity-0 duration-700 space-y-3">
-                                    <h2 className="font-bold  2xl:text-4xl lg:text-2xl text-base underline-animation after:bg-white after:duration-500 w-fit">
-                                        {data.name}
-                                    </h2>
-                                    {/* <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
+                    <h2
+                        className={`absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 md:w-[40vw] md:px-0 px-5 ${
+                            loading && "opacity-0"
+                        } duration-700 delay-200`}
+                    >
+                        I’m Mir Fayek Hossain, a Front-end Developer and UI/UX
+                        specialist who thrives in creating unique data-driven
+                        design approaches.
+                    </h2>
+                </div>
+                <div
+                    className={`min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b ${
+                        loading && "translate-y-[10vh] opacity-0"
+                    } duration-1000 delay-100`}
+                    id="works"
+                >
+                    <h2 className="my-auto pl-10 md:block hidden">
+                        Mir Fayek Hossain
+                    </h2>
+                    <div className="grid grid-cols-3 place-items-center border-l ">
+                        <button onClick={scrollTo90vh}>
+                            <BreakText word="Works" />
+                        </button>
+                        {/* <button onClick={handleResume}> */}
+                        <Link href="/mir-fayek-hossain-cv" target="_blanks">
+                            <BreakText word="Resume" />
+                        </Link>
+                        {/* </button> */}
+                        <button onClick={scrollToBottom}>
+                            <BreakText word="Contacts" />
+                        </button>
+                    </div>
+                </div>
+                <div className="grid md:grid-cols-2 backdrop-blur-2xl overflow-hidden">
+                    {details.map((data) => (
+                        <Link
+                            href={data.url}
+                            key={data.id}
+                            target="_blank"
+                            className="relative w-full lg:h-[50vh] md:h-[30vw] h-[70vw] bg-black group overflow-hidden project"
+                        >
+                            <ExtendedImage
+                                src={data.thumb}
+                                className="group-hover:opacity-25 group-hover:scale-110 duration-[.6s] opacity-75"
+                            />
+                            <div className="absolute 2xl:left-10 left-5 2xl:bottom-10 bottom-5 group-hover:opacity-100 lg:opacity-0 duration-700 space-y-3">
+                                <h2 className="font-bold  2xl:text-4xl lg:text-2xl text-base underline-animation after:bg-white after:duration-500 w-fit">
+                                    {data.name}
+                                </h2>
+                                {/* <p className=" 2xl:text-2xl text-xl underline-animation after:duration-500 w-fit">
                                         {data.stacks.map((stack, idx) => (
                                             <span key={idx}>
                                                 {stack}
@@ -331,20 +328,17 @@ export default function Home() {
                                     <p className="underline-animation after:duration-500 w-fit  2xl:text-base text-sm">
                                         {data?.description}
                                     </p> */}
-                                </div>
-                            </Link>
-                        ))}
-                        <div></div>
-                        <div className="relative  w-full lg:h-[50vh] md:h-[30vw] h-[70vw] flex justify-center items-center px-10 group lg:text-[9vh] text-[4vh] leading-[1] uppercase">
-                            <h2 className="w-fit text-justify ">
-                                Don&apos;t be a stranger! Let&apos;s work
-                                Together,
-                                <br />
-                                <span className="bg-brand text-black">
-                                    say hi!
-                                </span>
-                            </h2>
-                            {/* <h2 className="px-10 text-justify absolute -z-[100] opacity-0 group-hover:z-10 group-hover:opacity-100 duration-500">
+                            </div>
+                        </Link>
+                    ))}
+                    <div></div>
+                    <div className="relative w-full  md:h-[25vw] h-[40vw] flex justify-center items-center px-10 group text-[4.2vw] leading-[1] uppercase">
+                        <h2 className="w-fit text-justify ">
+                            Don&apos;t be a stranger! Let&apos;s work Together,
+                            <br />
+                            <span className="bg-brand text-black">say hi!</span>
+                        </h2>
+                        {/* <h2 className="px-10 text-justify absolute -z-[100] opacity-0 group-hover:z-10 group-hover:opacity-100 duration-500">
                                 
                                 Please stay a stranger! Let&apos;s work
                                 Separately,
@@ -353,30 +347,27 @@ export default function Home() {
                                     & No hellos
                                 </span>
                             </h2> */}
-                        </div>
-                        <div
-                            className="  lg:h-[50vh] md:h-[30vw] h-[70vw]"
-                            id="contacts"
-                        >
-                            <ul className="flex flex-col h-full md:border-l parent">
-                                {contactData.map((data) => (
-                                    <Link
-                                        key={data.id}
-                                        className="h-full border-b md:border-t-0 border-t"
-                                        href={data.url}
-                                    >
-                                        <li className="2xl:text-4xl lg:text-2xl text-base child w-full h-full flex items-center md:ml-10 duration-500">
-                                            <BreakText
-                                                word={data.name}
-                                                titleDetails={data?.description}
-                                            />
-                                        </li>
-                                    </Link>
-                                ))}
-                            </ul>
-                        </div>
+                    </div>
+                    <div className="  md:h-[25vw] h-[70vw]" id="contacts">
+                        <ul className="flex flex-col h-full md:border-l parent">
+                            {contactData.map((data) => (
+                                <Link
+                                    key={data.id}
+                                    className="h-full border-b md:border-t-0 border-t"
+                                    href={data.url}
+                                >
+                                    <li className="2xl:text-4xl lg:text-2xl text-base child w-full h-full flex items-center md:ml-10 ml-5 duration-500">
+                                        <BreakText
+                                            word={data.name}
+                                            titleDetails={data?.description}
+                                        />
+                                    </li>
+                                </Link>
+                            ))}
+                        </ul>
                     </div>
                 </div>
+            </div>
             </SmoothScroll>
         </>
     );
