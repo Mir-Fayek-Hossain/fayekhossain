@@ -4,9 +4,13 @@ import Head from "@/components/Head";
 import ResumeModal from "@/components/ResumeModal";
 import SmoothScroll from "@/components/SmoothScroll";
 import useWindowSize from "@/hooks/useWindowSize";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
+const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
+    ssr: false,
+});
 export default function Home() {
     const windowSize = useWindowSize();
     const [resumeVisibility, setResumeVisibility] = useState(false);
@@ -164,6 +168,20 @@ export default function Home() {
     return (
         <>
             <Head title="Mir Fayek Hossain" ogTitle="Software Engineer" />
+            <AnimatedCursor
+                innerSize={8}
+                outerSize={35}
+                innerScale={1}
+                outerScale={2}
+                outerAlpha={0}
+                hasBlendMode={true}
+                innerStyle={{
+                    backgroundColor: "#f76e02",
+                }}
+                outerStyle={{
+                    border: "3px solid #f76e02",
+                }}
+            />
             {loading && (
                 <div className="fixed top-0 w-full h-full z-[999]">
                     <div className="relative w-full h-full flex justify-center items-center ">
@@ -219,10 +237,7 @@ export default function Home() {
                     <button onClick={scrollTo90vh}>
                         <BreakText word="Works" />
                     </button>
-                    <Link
-                        href="https://www.dropbox.com/s/9s6emxyof02a0tz/Mir%20Fayek%20Hossain%28CV%29.pdf?dl=0s"
-                        target="_blanks"
-                    >
+                    <Link href="/mir-fayek-hossain-cv" target="_blanks">
                         <BreakText word="Resume" />
                     </Link>
                     <button onClick={scrollToBottom}>
@@ -277,7 +292,7 @@ export default function Home() {
                             </button>
                             {/* <button onClick={handleResume}> */}
                             <Link
-                                href="https://www.dropbox.com/s/9s6emxyof02a0tz/Mir%20Fayek%20Hossain%28CV%29.pdf?dl=0s"
+                                href="/mir-fayek-hossain-cv"
                                 target="_blanks"
                             >
                                 <BreakText word="Resume" />
