@@ -1,12 +1,16 @@
+import Head from "@/components/Head";
+
 const Resume = () => {
     return (
-        <div>
+        <>
+            <Head title="Mir Fayek Hossain" ogTitle="CV" />
+
             <iframe
                 className="h-screen w-full"
                 src="/Mir Fayek Hossain(CV).pdf"
                 frameBorder="0"
             ></iframe>
-        </div>
+        </>
     );
 };
 
