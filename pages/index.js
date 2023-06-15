@@ -214,9 +214,6 @@ export default function Home() {
                     } duration-1000`}
                 >
                     <div className="w-full h-[90vh] relative ">
-                        <div className="relative w-[30vh] aspect-square float-right rounded-full overflow-hidden">
-                            <ExtendedImage src="/me.png" />
-                        </div>
                         <div
                             className={`text-[10vw] font-bold leading-tight md:px-0 px-5  ${
                                 loading
@@ -227,6 +224,9 @@ export default function Home() {
                             <h2 className="grd gradient-1">Mir</h2>
                             <h2 className="grd">Fayek</h2>
                             <h2 className="grd gradient-3">Hossin</h2>
+                        </div>
+                        <div className="relative lg:w-[30vh] w-[30vh] aspect-square md:float-right rounded-full overflow-hidden mx-auto">
+                            <ExtendedImage src="/me.png" />
                         </div>
                         <h2
                             className={`absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 md:w-[40vw] md:px-0 px-5 ${
@@ -261,7 +261,7 @@ export default function Home() {
                             </button>
                         </div>
                     </div>
-                   <Body details={details} contactData={contactData}/>
+                    <Body details={details} contactData={contactData} />
                 </div>
             </SmoothScroll>
         </>
