@@ -178,16 +178,7 @@ export default function Home() {
                 }}
             />
             {loading && <Loading />}
-            <div
-                className={`fixed top-0 w-full h-full bg-cover bg-center   duration-500`}
-                style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}
-            >
-                <ExtendedImage
-                    src="/static/hero-bg.jpg"
-                    className="-z-10"
-                    priority
-                />
-            </div>
+
             <div
                 className={`opacity-0 -z-[100] min-h-[10vh] max-h-[10vh] w-full backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b duration-1000 delay-100`}
                 ref={fixedElementRef}
@@ -213,9 +204,9 @@ export default function Home() {
                         loading && "opacity-0"
                     } duration-1000`}
                 >
-                    <div className="w-full h-[90vh] relative ">
+                    <div className="w-full h-[90vh] relative md:text-left text-center">
                         <div
-                            className={`text-[10vw] font-bold leading-tight md:px-0 px-5  ${
+                            className={`text-[10vw] font-bold leading-tight md:px-0 px-5 md:mt-[0] mt-[35vh] ${
                                 loading
                                     ? "translate-x-[-50vw]"
                                     : "translate-x-[0vw]"
@@ -225,9 +216,12 @@ export default function Home() {
                             <h2 className="grd">Fayek</h2>
                             <h2 className="grd gradient-3">Hossin</h2>
                         </div>
-                        <div className="relative lg:w-[30vh] w-[30vh] aspect-square md:float-right rounded-full overflow-hidden mx-auto">
-                            <ExtendedImage src="/me.png" />
-                        </div>
+
+                        <ExtendedImage
+                            src="/me.png"
+                            className=" max-w-[30vh] max-h-[30vh] rounded-full md:ml-auto md:mx-0 mx-auto"
+                        />
+
                         <h2
                             className={`absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 md:w-[40vw] md:px-0 px-5 ${
                                 loading && "opacity-0"
