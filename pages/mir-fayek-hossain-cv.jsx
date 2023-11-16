@@ -1,4 +1,4 @@
-const Resume = () => {
+const mirfayekhossaincv = () => {
     return (
         <div>
             <iframe
@@ -10,4 +10,4 @@ const Resume = () => {
     );
 };
 
-export default Resume;
+export default mirfayekhossaincv;
