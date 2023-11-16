@@ -132,7 +132,7 @@ export default function Home() {
         // Delayed function execution
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 5000);
+        }, 1000);
         // Clean up the timer when the component unmounts
         return () => clearTimeout(timer);
     }, []);
