@@ -20,7 +20,7 @@ export default function Home() {
             id: 0,
             name: "Codecony",
             thumb: "/static/projects/codecony.jpg",
-            url: "https://codecony.vercel.app",
+            url: "https://codecony.com/",
             stacks: ["NextJS", "TailwindCSS"],
             description: "",
         },
