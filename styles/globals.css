@@ -3,7 +3,7 @@
 @tailwind utilities;
 @font-face {
     font-family: "Futura";
-    src: url("/fonts/GoblinOne-Regular.ttf") format("truetype");
+    src: url("/fonts/GoblinOne-Regular.ttf") format("woff2");
     /* src: url("/fonts/GoblinOne.ttf") format("truetype"); */
     font-weight: normal;
     font-style: normal;

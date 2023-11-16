@@ -3,7 +3,7 @@ const Resume = () => {
         <div>
             <iframe
                 className="h-screen w-full"
-                src="/Mir Fayek Hossain(CV).pdf"
+                src="/MirFayekHossain(CV).pdf"
                 frameBorder="0"
             ></iframe>
         </div>

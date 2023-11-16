@@ -1,7 +1,6 @@
 import BreakText from "@/components/BreakText";
 import ExtendedImage from "@/components/ExtendedImage";
 import Head from "@/components/Head";
-import ResumeModal from "@/components/ResumeModal";
 import SmoothScroll from "@/components/SmoothScroll";
 import useWindowSize from "@/hooks/useWindowSize";
 import dynamic from "next/dynamic";
@@ -13,7 +12,6 @@ const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
 });
 export default function Home() {
     const windowSize = useWindowSize();
-    const [resumeVisibility, setResumeVisibility] = useState(false);
     const [loading, setLoading] = useState(true);
     const fixedElementRef = useRef(null);
 
@@ -59,23 +57,6 @@ export default function Home() {
             stacks: ["HTML5", "JQuery"],
             description: "",
         },
-        // {
-        //     id: 5,
-        //     name: "Netflix Clone",
-        //     thumb: "/static/projects/netflix.png",
-        //     url: "#",
-        //     stacks: ["NextJS", "TailwindCSS"],
-        //     description: "",
-        // },
-
-        // {
-        //     id: 6,
-        //     name: "Xalian",
-        //     thumb: "/static/projects/xalian.jpg",
-        //     url: "https://xalian.vercel.app/",
-        //     stacks: ["ReactJS", "TailwindCSS"],
-        //     description: "",
-        // },
     ]);
     const windowHeight = windowSize?.height;
     const scrollHeight = windowHeight * 0.9;
@@ -114,9 +95,6 @@ export default function Home() {
     };
     const scrollTo90vh = () => {
         window.scrollTo(0, scrollHeight);
-    };
-    const handleResume = () => {
-        setResumeVisibility(!resumeVisibility);
     };
     const [contactData, setContactData] = useState([
         {
@@ -245,10 +223,6 @@ export default function Home() {
                     </button>
                 </div>
             </div>
-            <ResumeModal
-                resumeVisibility={resumeVisibility}
-                setResumeVisibility={setResumeVisibility}
-            />
             <SmoothScroll>
             <div
                 className={`w-full flex flex-col ${
@@ -290,11 +264,9 @@ export default function Home() {
                         <button onClick={scrollTo90vh}>
                             <BreakText word="Works" />
                         </button>
-                        {/* <button onClick={handleResume}> */}
                         <Link href="/mir-fayek-hossain-cv" target="_blanks">
                             <BreakText word="Resume" />
                         </Link>
-                        {/* </button> */}
                         <button onClick={scrollToBottom}>
                             <BreakText word="Contacts" />
                         </button>
