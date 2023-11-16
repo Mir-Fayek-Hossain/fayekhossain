@@ -53,7 +53,7 @@ export default function Home() {
             id: 4,
             name: "Notely",
             thumb: "/static/projects/notely.jpg",
-            url: "https://notely.art",
+            url: "http://178.128.215.73:3000",
             stacks: ["HTML5", "JQuery"],
             description: "",
         },
@@ -201,7 +201,7 @@ export default function Home() {
                 style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}
             >
                 <div className="relative w-[30vh] aspect-square float-right rounded-full overflow-hidden">
-                    <ExtendedImage src="/me.png" />
+                    <ExtendedImage priority={true} src="/me.png" />
                 </div>
             </div>
             <div
