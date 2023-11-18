@@ -1,7 +1,7 @@
 import BreakText from "@/components/BreakText";
 import ExtendedImage from "@/components/ExtendedImage";
 import Head from "@/components/Head";
-import SmoothScroll from "@/components/SmoothScroll";
+// import SmoothScroll from "@/components/SmoothScroll";
 import useWindowSize from "@/hooks/useWindowSize";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -13,8 +13,31 @@ const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
 export default function Home() {
     const windowSize = useWindowSize();
     const [loading, setLoading] = useState(true);
-    const fixedElementRef = useRef(null);
+    const [coffeeCreating, setCoffeeCreating] = useState(true);
+    
+    const windowHeight = windowSize?.height;
+    const scrollHeight = windowHeight * 0.9;
+    const ref = useRef(null);
 
+    const enterFullscreen = () => {
+      if (ref.current) {
+        if (ref.current.requestFullscreen) {
+          ref.current.requestFullscreen();
+        } else if (ref.current.mozRequestFullScreen) {
+          ref.current.mozRequestFullScreen();
+        } else if (ref.current.webkitRequestFullscreen) {
+          ref.current.webkitRequestFullscreen();
+        } else if (ref.current.msRequestFullscreen) {
+          ref.current.msRequestFullscreen();
+        }
+        setLoading(false)
+      }
+    }; const scrollToBottom = () => {
+        window.scrollTo(0, document.body.scrollHeight);
+    };
+    const scrollTo90vh = () => {
+        window.scrollTo(0, scrollHeight);
+    };
     const [details, setdetails] = useState([
         {
             id: 0,
@@ -58,44 +81,6 @@ export default function Home() {
             description: "",
         },
     ]);
-    const windowHeight = windowSize?.height;
-    const scrollHeight = windowHeight * 0.9;
-    useEffect(() => {
-        const handleScroll = () => {
-            // Calculate the scroll position relative to the viewport height
-            const scrollPosition =
-                window.scrollY / (document.documentElement.clientHeight * 0.9);
-
-            // Check if the scroll position is at or beyond 90vh
-            if (scrollPosition >= 1) {
-                // Fix the element at the top of the page
-                fixedElementRef.current.style.position = "fixed";
-                fixedElementRef.current.style.top = "0";
-                fixedElementRef.current.style.zIndex = "100";
-                fixedElementRef.current.style.opacity = "1";
-            } else {
-                // Unfix the element
-                fixedElementRef.current.style.position = "relative";
-                fixedElementRef.current.style.top = "auto";
-                fixedElementRef.current.style.zIndex = "-100";
-                fixedElementRef.current.style.opacity = "0"; // Resetting opacity to 1
-            }
-        };
-
-        // Add the scroll event listener when the component mounts
-        window.addEventListener("scroll", handleScroll);
-
-        // Clean up the event listener when the component unmounts
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-    const scrollToBottom = () => {
-        window.scrollTo(0, document.body.scrollHeight);
-    };
-    const scrollTo90vh = () => {
-        window.scrollTo(0, scrollHeight);
-    };
     const [contactData, setContactData] = useState([
         {
             id: 0,
@@ -131,7 +116,7 @@ export default function Home() {
     useEffect(() => {
         // Delayed function execution
         const timer = setTimeout(() => {
-            setLoading(false);
+            setCoffeeCreating(false);
         }, 1000);
         // Clean up the timer when the component unmounts
         return () => clearTimeout(timer);
@@ -141,10 +126,12 @@ export default function Home() {
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "unset";
+        window.scrollTo(0, 0);
+
         }
     }, [loading]);
     return (
-        <>
+        <div ref={ref} className="!overflow-y-auto !overflow-x-hidden">
             <Head title="Mir Fayek Hossain" ogTitle="Software Engineer" />
             <AnimatedCursor
                 innerSize={8}
@@ -161,7 +148,7 @@ export default function Home() {
                 }}
             />
             {loading && (
-                <div className="fixed top-0 w-full h-full z-[999]">
+                <div className="fixed top-0 w-full h-full z-[199]">
                     <div className="relative w-full h-full flex justify-center items-center ">
                         <ExtendedImage
                             src="/static/hero-bg.jpg"
@@ -169,6 +156,18 @@ export default function Home() {
                             priority
                         />
                         <div className="flex gap-4 items-end">
+                  
+                            {coffeeCreating?<div>
+                                <h2>Turning</h2> <h2>Coffee</h2>{" "}
+                                <div className="flex">
+                                    <h2>into Code</h2>
+                                    <div className="self-end bouncing-loader pb-1">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>:<div className="flex items-end gap-4" onClick={enterFullscreen}>
                             <div className="loader">
                                 <ul>
                                     <li></li>
@@ -178,18 +177,11 @@ export default function Home() {
                                 <div className="cup">
                                     <span></span>
                                 </div>
-                            </div>
-                            <div>
-                                <h2>Turningtest</h2> <h2>Coffee</h2>{" "}
-                                <div className="flex">
-                                    <h2>into Code</h2>
-                                    <div className="self-end bouncing-loader pb-1">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div><div>
+                                <h2>
+                                It&apos;s Ready!
+                                </h2>
+                                <h2>Click ME !</h2></div></div>} 
                         </div>
                     </div>
                 </div>
@@ -200,38 +192,20 @@ export default function Home() {
                 } duration-500`}
                 style={{ backgroundImage: 'url("/static/hero-bg.jpg")' }}
             >
-                <div className="relative w-[30vh] aspect-square float-right rounded-full overflow-hidden">
+                <div className="relative mt-[20vh] md:mt-0  w-[40vw] md:w-[30vh] aspect-square float-right rounded-full overflow-hidden">
                     <ExtendedImage priority={true} src="/me.png" />
                 </div>
             </div>
-            <div
-                className={`opacity-0 -z-[100] min-h-[10vh] max-h-[10vh] w-full backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b duration-1000 delay-100`}
-                ref={fixedElementRef}
-            >
-                <h2 className="my-auto pl-10 md:block hidden">
-                    Mir Fayek Hossain
-                </h2>
-                <div className="grid grid-cols-3 place-items-center border-l ">
-                    <button onClick={scrollTo90vh}>
-                        <BreakText word="Works" />
-                    </button>
-                    <Link href="/mir-fayek-hossain-cv" target="_blanks">
-                        <BreakText word="Resume" />
-                    </Link>
-                    <button onClick={scrollToBottom}>
-                        <BreakText word="Contacts" />
-                    </button>
-                </div>
-            </div>
-            <SmoothScroll>
+            
+            {/* <SmoothScroll> */}
             <div
                 className={`w-full flex flex-col ${
                     loading && "opacity-0"
-                } duration-1000`}
+                } duration-1000 relative`}
             >
                 <div className="w-full h-[90vh] relative ">
                     <div
-                        className={`text-[10vw] font-bold leading-tight md:px-0 px-5  ${
+                        className={`text-[10vw] mt-[20vh] md:mt-0 font-bold leading-tight md:px-0 px-5  ${
                             loading
                                 ? "translate-x-[-50vw]"
                                 : "translate-x-[0vw]"
@@ -252,27 +226,26 @@ export default function Home() {
                     </h2>
                 </div>
                 <div
-                    className={`min-h-[10vh] max-h-[10vh]  backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b ${
-                        loading && "translate-y-[10vh] opacity-0"
-                    } duration-1000 delay-100`}
-                    id="works"
+                    className={`min-h-[10vh] sticky top-0 z-50 max-h-[10vh]  backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b`}
+                   
                 >
                     <h2 className="my-auto pl-10 md:block hidden">
                         Mir Fayek Hossain
                     </h2>
                     <div className="grid grid-cols-3 place-items-center border-l ">
-                        <button onClick={scrollTo90vh}>
+                        <a href="#works">
                             <BreakText word="Works" />
-                        </button>
-                        <Link href="/mir-fayek-hossain-cv" target="_blanks">
+                        </a>
+                        <Link href="/mir-fayek-hossain-cv" >
                             <BreakText word="Resume" />
                         </Link>
-                        <button onClick={scrollToBottom}>
+                        <a href="#contacts" >
+
                             <BreakText word="Contacts" />
-                        </button>
+                        </a>
                     </div>
                 </div>
-                <div className="grid md:grid-cols-2 backdrop-blur-2xl overflow-hidden">
+                <div  id="works" className="grid md:grid-cols-2 backdrop-blur-2xl overflow-hidden">
                     {details.map((data) => (
                         <Link
                             href={data.url}
@@ -340,7 +313,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            </SmoothScroll>
-        </>
+            {/* </SmoothScroll> */}
+        </div>
     );
 }
