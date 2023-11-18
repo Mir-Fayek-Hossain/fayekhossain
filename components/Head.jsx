@@ -83,7 +83,9 @@ const Head = ({ children, title, ogTitle }) => {
                 content="/static/ogimage.jpg"
             />
             <meta property="twitter:image" content="/static/ogimage.jpg" />
-
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+             <link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet"/>
             <link
                 key="icon32"
                 rel="icon"
