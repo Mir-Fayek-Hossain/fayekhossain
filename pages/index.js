@@ -180,7 +180,7 @@ export default function Home() {
                                 </div>
                             </div>
                             <div>
-                                <h2>Turning</h2> <h2>Coffee</h2>{" "}
+                                <h2>Turningtest</h2> <h2>Coffee</h2>{" "}
                                 <div className="flex">
                                     <h2>into Code</h2>
                                     <div className="self-end bouncing-loader pb-1">

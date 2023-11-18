@@ -23,7 +23,7 @@ const SmoothScroll = ({ children }) => {
     // 4.
     useEffect(() => {
         setBodyHeight();
-    }, [windowSize?.height, router.asPath]);
+    }, []);
 
     const setBodyHeight = () => {
         document.body.style.height = `${
@@ -50,11 +50,6 @@ const SmoothScroll = ({ children }) => {
                 data.current != data.rounded &&
                 data.rounded != Math.round(data.previous)
             ) {
-                // console.log("window.scrollY", window.scrollY);
-                // console.log("current", data.current);
-                // console.log("previous", data.previous);
-                // console.log("rounded", data.rounded);
-                // Recursive call untill reached target view
                 requestAnimationFrame(() => smoothScrollingHandler());
             }
         }
