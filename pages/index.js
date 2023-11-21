@@ -148,8 +148,8 @@ export default function Home() {
                 }}
             />
             {loading && (
-                <div className="fixed top-0 w-full h-full z-[199]">
-                    <div className="relative w-full h-full flex justify-center items-center ">
+                <div className="fixed bg-gray-800 top-0 w-full h-full z-[199]">
+                    <div className=" relative w-full h-full flex justify-center items-center ">
                         <ExtendedImage
                             src="/static/hero-bg.jpg"
                             className="-z-10"
@@ -167,7 +167,7 @@ export default function Home() {
                                         <div></div>
                                     </div>
                                 </div>
-                            </div>:<div className="flex items-end gap-4" onClick={enterFullscreen}>
+                            </div>:<div className="zoom cursor-pointer flex items-end gap-4" onClick={enterFullscreen}>
                             <div className="loader">
                                 <ul>
                                     <li></li>
@@ -216,13 +216,15 @@ export default function Home() {
                         <h2 className="grd gradient-3">Hossin</h2>
                     </div>
                     <h2
-                        className={`absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 md:w-[40vw] md:px-0 px-5 ${
+                        className={`absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 md:w-[45vw] md:px-0 px-5  ${
                             loading && "opacity-0"
                         } duration-700 delay-200`}
                     >
-                        I’m Mir Fayek Hossain, a Front-end Developer and UI/UX
+                        
+                        I’m Mir Fayek Hossain, a Web Developer and UI/UX
                         specialist who thrives in creating unique data-driven
-                        design approaches.
+                        design approaches. I have more than one year of
+professional experience with several multinational companies.
                     </h2>
                 </div>
                 <div
@@ -254,6 +256,7 @@ export default function Home() {
                             className="relative w-full lg:h-[50vh] md:h-[30vw] h-[70vw] bg-black group overflow-hidden project"
                         >
                             <ExtendedImage
+                            priority={true}
                                 src={data.thumb}
                                 className="group-hover:opacity-25 group-hover:scale-110 duration-[.6s] opacity-75"
                             />
