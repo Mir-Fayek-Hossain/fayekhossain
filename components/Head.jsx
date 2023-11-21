@@ -5,7 +5,7 @@ import { memo } from "react";
 const Head = ({ children, title, ogTitle }) => {
     const router = useRouter();
     const description =
-        " I’m Mir Fayek Hossain, a Front-end Developer and UI/UX specialist who thrives in creating unique data-driven design approaches.";
+        " I’m Mir Fayek Hossain, a Web Developer and UI/UX specialist who thrives in creating unique data-driven design approaches.";
     let pageTitle = `${title} |  ${ogTitle}`;
     return (
         <NextHead>
