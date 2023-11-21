@@ -217,8 +217,9 @@ export default function Home() {
                     </div>
                     <h2
                         className={`absolute bottom-10 2xl:text-2xl lg:text-xl text-base right-0 md:w-[45vw] md:px-0 px-5  ${
-                            loading && "opacity-0"
-                        } duration-700 delay-200`}
+                            loading ?"-translate-y-[100%]"
+                            :"translate-y-0"
+                        } duration-1000 delay-1000`}
                     >
                         
                         I’m Mir Fayek Hossain, a Web Developer and UI/UX
@@ -228,7 +229,9 @@ professional experience with several multinational companies.
                     </h2>
                 </div>
                 <div
-                    className={`min-h-[10vh] sticky top-0 z-50 max-h-[10vh]  backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b`}
+                    className={`min-h-[10vh] sticky top-0 z-50 max-h-[10vh]  backdrop-blur-lg grid md:grid-cols-2  2xl:text-2xl lg:text-xl text-base border-t  border-b ${
+                        loading && "opacity-0"
+                    } duration-1000 delay-1000`}
                    
                 >
                     <h2 className="my-auto pl-10 md:block hidden">
